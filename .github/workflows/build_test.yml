@@ -1,0 +1,42 @@
+name: Build Test
+
+on:
+  pull_request:
+    branches: [develop, staging, production, feature/*]
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout git
+        uses: actions/checkout@v3
+
+      - name: Config Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email github-actions@github.com
+
+      - name: Local merge
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+          FEATURE_BRANCH: ${{ github.head_ref }}
+        run: |
+          git fetch origin $FEATURE_BRANCH $BASE_BRANCH
+          git checkout $FEATURE_BRANCH
+          git checkout $BASE_BRANCH
+          git merge $FEATURE_BRANCH
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/Iron
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Lint check
+        run: yarn lint
+
+      - name: Build
+        run: yarn build
