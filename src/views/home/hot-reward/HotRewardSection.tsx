@@ -1,4 +1,4 @@
-import { Col, Flex, Row, Typography } from 'antd'
+import { Button, Col, Flex, Row, Typography } from 'antd'
 
 import HotRewardItem from './HotRewardItem'
 
@@ -11,9 +11,14 @@ export default function HotRewardSection() {
   return (
     <Row>
       <Col span={24}>
-        <Typography.Text className="uppercase text-white">
-          Hot rewards
-        </Typography.Text>
+        <Flex justify="space-between">
+          <Typography.Text className="uppercase text-white">
+            Hot rewards
+          </Typography.Text>
+          <Button type="primary" onClick={() => {}}>
+            See all --&gt;
+          </Button>
+        </Flex>
       </Col>
       <Col span={24} className="overflow-x-scroll">
         <Flex gap={40}>
