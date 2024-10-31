@@ -18,7 +18,7 @@ class BannerService {
     pageSize = DEFAULT_PAGE_SIZE,
     page = DEFAULT_PAGE,
   }: GetListHomeBannerDto = {}) {
-    let sortValue: string[] = []
+    const sortValue: string[] = []
     switch (sort) {
       case HomeBannerSort.PRIORITY:
       default:
