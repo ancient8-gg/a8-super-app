@@ -17,3 +17,9 @@ export type StrapiList<T> = {
     }
   }
 }
+
+export type GetListDto<T> = {
+  sort?: T
+  pageSize?: number
+  page?: number
+}

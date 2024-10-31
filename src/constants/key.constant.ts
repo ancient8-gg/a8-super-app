@@ -4,4 +4,5 @@ export const LOCAL_STORAGE_KEY = {
 
 export const QUERY_KEY = {
   GET_HOME_BANNERS: 'GET_HOME_BANNERS',
+  GET_REWARDS: 'GET_REWARDS',
 }
