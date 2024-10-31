@@ -1,0 +1,7 @@
+export const LOCAL_STORAGE_KEY = {
+  ACCESS_TOKEN: 'ACCESS_TOKEN',
+}
+
+export const QUERY_KEY = {
+  GET_HOME_BANNERS: 'GET_HOME_BANNERS',
+}

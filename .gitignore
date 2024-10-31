@@ -41,3 +41,6 @@ next-env.d.ts
 
 #public
 /public/antd.min.css
+
+#workspace
+.vscode

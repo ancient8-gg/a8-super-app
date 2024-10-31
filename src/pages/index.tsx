@@ -1,11 +1,11 @@
-import { Button } from 'antd'
+import BannerSection from '@/views/home/banner/BannerSection'
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
-      <Button type="primary" className="!w-40">
-        Home
-      </Button>
+      <BannerSection />
     </div>
   )
 }
+
+export default Home
