@@ -6,7 +6,6 @@ import { useRewards } from '@/hooks/reward/useRewards'
 
 export default function HotRewardSection() {
   const { data } = useRewards()
-  console.log({ data })
 
   return (
     <Row>
