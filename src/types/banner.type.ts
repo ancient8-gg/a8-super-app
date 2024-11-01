@@ -1,3 +1,5 @@
+import { GetListDto } from './common.type'
+
 export type HomeBanner = {
   title: string
   description: string
@@ -11,8 +13,4 @@ export enum HomeBannerSort {
   PRIORITY = 'HOME_BANNER_SORT:PRIORITY',
 }
 
-export type GetListHomeBannerDto = {
-  sort?: HomeBannerSort
-  pageSize?: number
-  page?: number
-}
+export type GetListHomeBannerDto = GetListDto<HomeBannerSort>
