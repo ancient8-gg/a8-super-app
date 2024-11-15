@@ -1,5 +1,6 @@
 import BannerSection from '@/views/home/banner/BannerSection'
 import HotRewardSection from '@/views/home/hot-reward/HotRewardSection'
+import { getMainLayout } from '@/layouts'
 
 const Home = () => {
   return (
@@ -9,5 +10,7 @@ const Home = () => {
     </div>
   )
 }
+
+Home.getLayout = getMainLayout
 
 export default Home
