@@ -9,7 +9,7 @@ function MainLayout({ children }: PropsWithChildren) {
     <Layout
       config={{
         sider: {
-          baseUrl: apiConfig.strapiApi,
+          baseUrl: `${apiConfig.strapiApi}/side-menus`,
         },
       }}
     >
