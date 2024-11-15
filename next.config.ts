@@ -5,11 +5,13 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: process.env.NEXT_PUBLIC_ENV === 'staging',
   reactStrictMode: true,
   transpilePackages: [
+    '@ancient8/components',
     '@ant-design',
     'antd',
     'rc-notification',
     'rc-pagination',
     'rc-picker',
+    'rc-input',
     'rc-table',
     'rc-tooltip',
     'rc-tree',
