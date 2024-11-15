@@ -19,7 +19,7 @@ const supportedChains = [sepolia, ancient8] as [
 
 export const wagmiConfig = getDefaultConfig({
   appName: 'a8-super-app',
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
+  projectId: process.env.NEXT_PUBLIC_WAGMI_PROJECT_ID as string,
   chains: supportedChains,
   wallets: [
     {
