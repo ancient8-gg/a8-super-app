@@ -6,7 +6,6 @@ import { darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit'
 import { WagmiProvider } from 'wagmi'
 
 import QueryClientProvider from '@/providers/QueryClientProvider'
-import ThemeProvider from '@/providers/ThemeProvider'
 
 import { wagmiConfig } from '@/configs'
 
@@ -29,9 +28,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider>
         <RainbowKitProvider theme={darkTheme()}>
-          <ThemeProvider>
-            {getLayout(<Component {...pageProps} />)}
-          </ThemeProvider>
+          {getLayout(<Component {...pageProps} />)}
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

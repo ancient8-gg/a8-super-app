@@ -8,7 +8,7 @@ type BannerItemProps = {
 
 const BannerItem = ({ bannerData }: BannerItemProps) => {
   return (
-    <Row>
+    <Row className="w-screen">
       <Col span={12}>
         <div>
           <Image
