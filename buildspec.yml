@@ -13,7 +13,7 @@ phases:
       - echo Docker Build started on `date`
       - echo "PROJECT ID $WAGMI_PROJECT_ID"
       - echo "STRAPI API $STRAPI_API"
-      - docker build --build-arg WAGMI_PROJECT_ID=$WAGMI_PROJECT_ID --build-arg STRAPI_API=$STRAPI_API -t service_app -f Dockerfile .
+      - docker build --build-arg STRAPI_API=$STRAPI_API -t service_app -f Dockerfile .
       - docker tag service_app:latest $REPOSITORY_URL:latest
       - docker tag service_app:latest $REPOSITORY_URL:$IMAGE_TAG
       - echo Docker Build completed on `date`
