@@ -1,6 +1,7 @@
 import type { PropsWithChildren, ReactNode } from 'react'
-
 import { Layout } from '@ancient8/components'
+
+import ThemeProvider from '@/providers/ThemeProvider'
 
 import { apiConfig } from '@/configs'
 
@@ -13,7 +14,9 @@ function MainLayout({ children }: PropsWithChildren) {
         },
       }}
     >
-      {children}
+      <div className="absolute inset-0">
+        <ThemeProvider>{children}</ThemeProvider>
+      </div>
     </Layout>
   )
 }

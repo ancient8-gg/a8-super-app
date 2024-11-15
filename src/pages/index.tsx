@@ -4,7 +4,7 @@ import { getMainLayout } from '@/layouts'
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-screen">
       <BannerSection />
       <HotRewardSection />
     </div>
