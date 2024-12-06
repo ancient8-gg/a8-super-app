@@ -14,7 +14,7 @@ function MainLayout({ children }: PropsWithChildren) {
         },
       }}
     >
-      <div className="absolute inset-0">
+      <div className="px-10 pt-[27px] w-[calc(100vw_-_71px)]">
         <ThemeProvider>{children}</ThemeProvider>
       </div>
     </Layout>

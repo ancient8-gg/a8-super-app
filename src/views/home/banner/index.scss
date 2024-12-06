@@ -1,0 +1,30 @@
+.game-project-name {
+  height: 32px;
+  padding: 0 24px;
+  background: #caff43;
+  color: #000;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 7px) 0,
+    100% 7px,
+    100% 100%,
+    7px 100%,
+    0 calc(100% - 7px)
+  );
+}
+
+.banner-section {
+  .banner {
+    &-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 120%;
+      text-transform: uppercase;
+
+      background: linear-gradient(270deg, #d8ff76 19.91%, #f9ffe7 92.8%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

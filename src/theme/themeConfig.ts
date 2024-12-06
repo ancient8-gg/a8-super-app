@@ -4,6 +4,6 @@ export const theme: ThemeConfig = {
   // dummy config
   token: {
     fontSize: 16,
-    colorPrimary: '#52c41a',
+    colorPrimary: '#D8FF76',
   },
 }

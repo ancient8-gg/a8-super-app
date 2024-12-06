@@ -25,6 +25,7 @@
     "react-countdown": "^2.3.6",
     "react-dom": "18",
     "sass": "^1.80.6",
+    "swiper": "^11.1.15",
     "viem": "^2.21.44",
     "wagmi": "^2.12.30"
   },
