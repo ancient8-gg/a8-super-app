@@ -5,9 +5,6 @@ import { Navigation, Pagination } from 'swiper/modules'
 
 import { Button } from 'antd'
 
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 import './index.scss'
 
 interface SwiperSlidesProps {
