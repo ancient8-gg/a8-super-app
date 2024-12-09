@@ -1,0 +1,54 @@
+@import '@/theme/vars';
+
+.banner-swiper {
+  &-container {
+    margin-top: 20px;
+  }
+
+  &-nav {
+    margin-top: 20px;
+
+    .swiper-slide {
+      img {
+        border-radius: 12px;
+        border: 1.4px solid rgba(255, 255, 255, 0.12);
+      }
+
+      &-thumb-active {
+        img {
+          border: 1.4px solid $PRIMARY;
+        }
+      }
+    }
+
+    &-btn {
+      width: 80px;
+      height: 40px;
+      border-radius: 9999px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999;
+      border: 1px solid #c4c6cd;
+      background: rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(12px);
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.12) !important;
+      }
+
+      &-prev {
+        left: 0;
+      }
+
+      &-next {
+        right: 0;
+      }
+
+      &.swiper-button-disabled {
+        border: 1px solid rgba(196, 198, 205, 0.12);
+        color: #a3a5ae;
+      }
+    }
+  }
+}

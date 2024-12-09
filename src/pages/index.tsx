@@ -1,12 +1,20 @@
 import BannerSection from '@/views/home/banner/BannerSection'
-import HotRewardSection from '@/views/home/hot-reward/HotRewardSection'
+// import HotRewardSection from '@/views/home/hot-reward/HotRewardSection'
 import { getMainLayout } from '@/layouts'
 
-const Home = () => {
+function Home() {
   return (
-    <div className="w-screen">
+    <div>
       <BannerSection />
-      <HotRewardSection />
+      {/* <HotRewardSection /> */}
+
+      {/*<Image*/}
+      {/*  src="/fakelove.jpg"*/}
+      {/*  alt="Fake Love"*/}
+      {/*  layout="responsive"*/}
+      {/*  width={100}*/}
+      {/*  height={100}*/}
+      {/*/>*/}
     </div>
   )
 }
