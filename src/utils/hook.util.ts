@@ -1,9 +1,9 @@
 import { UseQueryResult } from '@tanstack/react-query'
 
-import { StrapiList } from '@/types'
+import { StrapiResponseList } from '@/types/strapi.type'
 
 export const extractStrapiListQueryResult = <T>(
-  queryResult: UseQueryResult<StrapiList<T>, Error>,
+  queryResult: UseQueryResult<StrapiResponseList<T>, Error>,
 ) => {
   const { data, ...rest } = queryResult
   return {

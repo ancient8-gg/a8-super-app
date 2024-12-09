@@ -14,7 +14,7 @@ function MainLayout({ children }: PropsWithChildren) {
         },
       }}
     >
-      <div className="px-10 pt-[27px] w-[calc(100vw_-_71px)]">
+      <div className="px-10 mobile:px-4 pt-[27px] w-[calc(100vw_-_71px)] mobile:w-[100vw]">
         <ThemeProvider>{children}</ThemeProvider>
       </div>
     </Layout>
