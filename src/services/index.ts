@@ -1,4 +1,7 @@
+export * from './coin-price.service'
 export * from './home-banner.service'
 export * from './reward.service'
 export * from './game.service'
 export * from './game-blog.service'
+export * from './nft-collection.service'
+export * from './orderbook.service'

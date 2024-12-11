@@ -2,6 +2,7 @@ import { getMainLayout } from '@/layouts'
 import BannerSection from '@/views/home/banner/BannerSection'
 import GamesSection from '@/views/home/games'
 import WidgetSection from '@/views/home/widget'
+import NftCollection from '@/views/home/nft-collection'
 
 function Home() {
   return (
@@ -11,6 +12,8 @@ function Home() {
       <WidgetSection />
 
       <GamesSection />
+
+      <NftCollection />
     </div>
   )
 }

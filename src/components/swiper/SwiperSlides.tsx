@@ -26,8 +26,9 @@ function SwiperSlides({
   slidesPerView = 1,
   centeredSlides = false,
   breakpoints = {
-    640: { slidesPerView: 1 },
+    375: { slidesPerView: 1 },
     768: { slidesPerView: 1 },
+    992: { slidesPerView: 1.33 },
     1024: { slidesPerView: 1.33 },
     1280: { slidesPerView: 1.33 },
   },

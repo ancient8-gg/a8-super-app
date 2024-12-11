@@ -5,24 +5,42 @@
     display: none;
   }
 
-  .game-blog {
-    &__item {
-      display: flex;
-      height: 428px;
-      padding: 20px;
-      align-items: flex-start;
-      gap: 40px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(25px);
+  .game-blog__item {
+    display: flex;
+    height: 428px;
+    padding: 20px;
+    align-items: flex-start;
+    gap: 40px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+  }
+
+  .game-thumbnail {
+    width: 565px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    .game-thumbnail {
+      width: 400px !important;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .game-thumbnail {
+      width: 300px !important;
+    }
+  }
+
+  @media screen and (max-width: $MAX_WIDTH_MOBILE) {
+    .game-blog__item {
+      border: none;
+      padding: 0;
     }
 
-    @media screen and (max-width: $MAX_WIDTH_MOBILE) {
-      &__item {
-        border: none;
-        padding: 0;
-      }
+    .game-thumbnail {
+      width: 343px !important;
     }
   }
 }

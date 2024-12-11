@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 import { Flex, Image, Typography } from 'antd'
 
-import SwiperSlides from '@/components/swiper/SwiperSlides'
 import { ViewMoreIcon } from '@/components/icons'
+import SwiperSlides from '@/components/swiper/SwiperSlides'
 
-import useIsMobile from '@/hooks/useIsMobile'
 import { useGamesBlog } from '@/hooks/game-blog/useGameBlogs'
+import useIsMobile from '@/hooks/useIsMobile'
 
 import { APP_ROUTES } from '@/constants'
 
@@ -24,8 +24,8 @@ function GameBlogSection() {
   const gameBlogs = useMemo(() => {
     return gameBlogsData.map((item) => (
       <div className="game-blog__item" key={item.id}>
-        <Flex className="mobile:flex-col gap-10 mobile:gap-4 w-full">
-          <div className="game-thumbnail w-[565px] mobile:w-[343px] h-[388px] mobile:h-[217px]">
+        <Flex className="mobile:flex-col mobile:items-center gap-10 mobile:gap-4 w-full">
+          <div className="game-thumbnail h-[388px] mobile:h-[217px]">
             <Image
               src={item.thumbnail.url}
               width="100%"
@@ -36,7 +36,11 @@ function GameBlogSection() {
             />
           </div>
 
-          <Flex vertical justify="space-between" className="mobile:gap-4">
+          <Flex
+            vertical
+            justify="space-between"
+            className="mobile:gap-4 flex-1"
+          >
             <Flex className="gap-5 mobile:gap-3" vertical>
               <Typography.Text className="text-[#D8FF76] text-lg mobile:text-[13px] font-medium uppercase leading-[1.1]">
                 {item.spotlight}
@@ -58,7 +62,7 @@ function GameBlogSection() {
                   blogId: item.slug,
                 },
               }}
-              className="flex justify-center items-center h-[48px] rounded-3xl bg-[#D8FF76] hover:!bg-[#C7F651] gap-[6px]"
+              className="flex justify-center items-center mobile:w-[343px] h-[48px] rounded-3xl bg-[#D8FF76] hover:!bg-[#C7F651] gap-[6px]"
               target="_blank"
             >
               <Typography.Text className="!text-[#090A0B] text-base leading-[1.3] font-bold">
