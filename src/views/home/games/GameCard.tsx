@@ -22,6 +22,7 @@ function GameCard({ gameDetails }: GameCardProps) {
         },
       }}
       target="_blank"
+      className="flex justify-center"
     >
       <div className="max-w-[312px] mobile:w-[165px] h-[432px] mobile:h-[230px] game-card">
         <Image
@@ -32,7 +33,7 @@ function GameCard({ gameDetails }: GameCardProps) {
           className="object-cover rounded-xl"
           preview={false}
         />
-        <div className="w-max absolute z-10 bottom-[27px] mobile:bottom-[5px] left-2/4 -translate-x-2/4">
+        <div className="w-max absolute z-10 bottom-[27px] mobile:bottom-[5px] left-2/4 -translate-x-2/4 h-[67px] mobile:h-[47px]">
           <Flex
             className="gap-3 mobile:gap-[6px] text-center"
             vertical
@@ -43,7 +44,7 @@ function GameCard({ gameDetails }: GameCardProps) {
             </Typography.Text>
 
             <Flex
-              className="game-category h-[31px] gap-2 mobile:gap-1 mobile:h-[24px]"
+              className="game-category h-[31px] mobile:h-[24px] gap-2 mobile:gap-1"
               justify="center"
             >
               {genre.map((item, index) => (

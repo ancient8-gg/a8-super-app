@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react'
+
 export type StrapiContent<T> = T & {
   id: number
   documentId: string
@@ -22,4 +24,10 @@ export type GetListDto<T> = {
   sort?: T
   pageSize?: number
   page?: number
+}
+
+export type BaseComponentProps = {
+  className?: string
+  style?: CSSProperties
+  size?: string | number
 }

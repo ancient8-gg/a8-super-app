@@ -1,0 +1,1 @@
+export const TIME_CACHE_PROXY_COINGECKO = 5 * 60 * 1000
