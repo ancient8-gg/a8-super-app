@@ -1,0 +1,5 @@
+export * from './DiscordIcon'
+export * from './GlobalIcon'
+export * from './TelegramIcon'
+export * from './XIcon'
+export * from './YoutubeIcon'

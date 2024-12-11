@@ -14,7 +14,8 @@ function MainLayout({ children }: PropsWithChildren) {
         },
       }}
     >
-      <div className="px-10 mobile:px-4 pt-[27px] w-[calc(100vw_-_71px)] mobile:w-[100vw]">
+      {/*TODO: update width on mobile later with pkg UI*/}
+      <div className="px-10 mobile:px-4 pt-[27px] w-[calc(100vw_-_71px)]">
         <ThemeProvider>{children}</ThemeProvider>
       </div>
     </Layout>
