@@ -79,6 +79,7 @@ function GameBlogSection() {
         slidesPerView={isMobile ? 1 : 1.33}
         pagination={true}
         showNavigationButtons={!isMobile}
+        className="game-blog-swiper"
       />
     </div>
   )
