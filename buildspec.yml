@@ -11,7 +11,14 @@ phases:
     commands:
       - IMAGE_TAG="$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
       - echo Docker Build started on `date`
-      - docker build --build-arg WAGMI_PROJECT_ID=$WAGMI_PROJECT_ID --build-arg STRAPI_API=$STRAPI_API --build-arg APP_ENV=$APP_ENV -t service_app -f Dockerfile .
+      - docker build --build-arg WAGMI_PROJECT_ID=$WAGMI_PROJECT_ID 
+        --build-arg STRAPI_API=$STRAPI_API 
+        --build-arg APP_ENV=$APP_ENV 
+        --build-arg BRIDGE_API=$BRIDGE_API 
+        --build-arg ORDERBOOK_API=$ORDERBOOK_API 
+        --build-arg NFT_MARKETPLACE_URL=$NFT_MARKETPLACE_URL 
+        --build-arg STATS_ANCIENT8_PROXY=$STATS_ANCIENT8_PROXY 
+        -t service_app -f Dockerfile .
       - docker tag service_app:latest $REPOSITORY_URL:latest
       - docker tag service_app:latest $REPOSITORY_URL:$IMAGE_TAG
       - echo Docker Build completed on `date`
