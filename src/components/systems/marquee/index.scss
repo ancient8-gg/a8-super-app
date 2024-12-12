@@ -1,0 +1,33 @@
+.marquee-wrapper {
+  display: flex;
+  overflow-x: hidden;
+
+  &:not(.marquee-wrapper__hovered) {
+    .rfm-marquee-container {
+      display: none !important;
+    }
+  }
+
+  &__hovered {
+    .marquee-container__not-hover {
+      display: none;
+    }
+
+    .rfm-child {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__not-hover {
+    .marquee-container,
+    .rfm-marquee-container {
+      display: none !important;
+    }
+    .marquee-container__not-hover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
