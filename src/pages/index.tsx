@@ -3,6 +3,7 @@ import BannerSection from '@/views/home/banner/BannerSection'
 import GamesSection from '@/views/home/games'
 import WidgetSection from '@/views/home/widget'
 import NftCollection from '@/views/home/nft-collection'
+import DAppEcosystem from '@/views/home/ecosystem'
 
 function Home() {
   return (
@@ -14,6 +15,8 @@ function Home() {
       <GamesSection />
 
       <NftCollection />
+
+      <DAppEcosystem />
     </div>
   )
 }
