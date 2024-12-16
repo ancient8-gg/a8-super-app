@@ -2,9 +2,34 @@ import { Flex, Typography, Image } from 'antd'
 
 import CardWidget from './CardWidget'
 
+import useIsMobile from '@/hooks/useIsMobile'
+
 import GameProtocolImg from '@/assets/img/widget/games.png'
+import GameProtocolMobileImg from '@/assets/img/widget/game-mobile.png'
 
 function GameProtocolWidget() {
+  const isMobile = useIsMobile()
+
+  if (isMobile)
+    return (
+      <CardWidget classname="h-[262px]">
+        <Flex vertical gap={10} className="h-full overflow-hidden">
+          <Typography.Text className="title-gradient text-[22px]/[22px] font-bold text-center">
+            Games
+            <br />
+            Protocols
+          </Typography.Text>
+
+          <Image
+            className="w-full object-cover"
+            src={GameProtocolMobileImg.src}
+            alt="games-protocol"
+            preview={false}
+          />
+        </Flex>
+      </CardWidget>
+    )
+
   return (
     <CardWidget classname="h-[262px] !p-0">
       <Flex align="center" justify="space-between" className="h-full px-6">

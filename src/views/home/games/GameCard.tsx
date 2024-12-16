@@ -24,7 +24,7 @@ function GameCard({ gameDetails }: GameCardProps) {
       target="_blank"
       className="flex justify-center"
     >
-      <div className="max-w-[312px] mobile:w-[165px] h-[432px] mobile:h-[230px] game-card">
+      <div className="max-w-[312px] mobile:max-w-[165px] h-[432px] mobile:h-[230px] game-card">
         <Image
           src={thumbnail.url}
           alt={title}

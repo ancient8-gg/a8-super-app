@@ -1,3 +1,5 @@
+import { Footer } from '@ancient8/components'
+
 import { getMainLayout } from '@/layouts'
 import BannerSection from '@/views/home/banner/BannerSection'
 import GamesSection from '@/views/home/games'
@@ -17,6 +19,8 @@ function Home() {
       <NftCollection />
 
       <DAppEcosystem />
+
+      <Footer />
     </div>
   )
 }

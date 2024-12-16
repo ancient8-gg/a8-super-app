@@ -46,7 +46,7 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
                 alt="game-banner"
                 preview={false}
                 rootClassName="w-full"
-                className="aspect-[36/10] object-cover"
+                className="aspect-[3/1] mobile:aspect-[5/3] object-cover"
               />
             </SwiperSlide>
           ))}
@@ -79,8 +79,8 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
               src={item.image}
               alt="game-banner"
               preview={false}
-              rootClassName="banner-nav-img w-[170px]"
-              className="aspect-[17/10] !h-[100px]"
+              rootClassName="banner-nav-img w-[170px] mobile:w-[124px]"
+              className="aspect-[17/10] !h-[100px] mobile:!h-[73px]"
             />
           </SwiperSlide>
         ))}

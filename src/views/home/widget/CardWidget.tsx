@@ -13,7 +13,7 @@ function CardWidget({ children, classname = '', bgGradient }: CardWidgetProps) {
     <div
       className={clsx(
         'px-6 py-8 mobile:px-3 mobile:py-4 rounded-3xl',
-        'border border-solid border-white/8 bg-[#101010]',
+        'border border-white/8 hover:border-primary transition bg-[#101010]',
         bgGradient && 'card-widget-bg-gradient',
         classname,
       )}

@@ -8,6 +8,8 @@ import CardDApp from './CardDApp'
 
 import { useDApp } from '@/hooks/home/dapp/useDApp'
 
+import { Brand } from '@/assets/icon'
+
 function DAppEcosystem() {
   const { data } = useDApp()
 
@@ -55,6 +57,25 @@ function DAppEcosystem() {
       >
         VIEW MORE <ArrowRight size={24} />
       </Button>
+
+      <Flex
+        justify="center"
+        align="end"
+        className="relative w-full h-[450px] mobile:h-[155px]"
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[360px] mobile:w-[160px] mobile:h-[137px]"
+        >
+          <source src="/video/controller.webm" type="video/mp4" />
+        </video>
+
+        <div className="w-full mobile:w-[344px]">
+          <Brand />
+        </div>
+      </Flex>
     </Flex>
   )
 }

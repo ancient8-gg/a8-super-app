@@ -31,6 +31,7 @@ const config: Config = {
         mobile: { max: '991.99px' },
       },
       opacity: {
+        3: '0.03',
         4: '0.04',
         6: '0.06',
         8: '0.08',

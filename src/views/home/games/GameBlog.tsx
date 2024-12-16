@@ -62,7 +62,7 @@ function GameBlogSection() {
                   blogId: item.slug,
                 },
               }}
-              className="flex justify-center items-center mobile:w-[343px] h-[48px] rounded-3xl bg-[#D8FF76] hover:!bg-[#C7F651] gap-[6px]"
+              className="flex justify-center items-center mobile:w-full h-[48px] rounded-3xl bg-[#D8FF76] hover:!bg-[#C7F651] gap-[6px]"
               target="_blank"
             >
               <Typography.Text className="!text-[#090A0B] text-base leading-[1.3] font-bold">
