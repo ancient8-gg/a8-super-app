@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 
 import { Flex, Typography, Button } from 'antd'
-import { Menu, ArrowRight } from 'iconsax-react'
+import { Menu as MenuIcon, ArrowRight } from 'iconsax-react'
 
 import LinkExternal from '@/components/systems/link-external'
+import SectionTitle from '@/components/section-title'
 import HomeBannerSwiper from './HomeBannerSwiper'
 
 import { useHomeBanners } from '@/hooks/home-banner/useHomeBanners'
@@ -28,20 +29,21 @@ const BannerSection = () => {
   return (
     <Flex vertical className="banner-section" gap={20}>
       <Flex align="center" className="game-project-name w-fit" gap={10}>
-        <Menu size="12" variant="Bold" />
+        <MenuIcon size="12" variant="Bold" />
         <Typography.Text className="text-[#0A0A0A] font-bold text-sm">
           GAME PROJECT NAME
         </Typography.Text>
-        <Menu size="12" variant="Bold" />
+        <MenuIcon size="12" variant="Bold" />
       </Flex>
 
-      <Flex justify="space-between" align="flex-end">
-        <Typography.Text className="banner-title w-[524px]">
-          {gameActive.title}
-        </Typography.Text>
+      <Flex className="justify-between items-end mobile:flex-col mobile:gap-5">
+        <SectionTitle title={gameActive.title} />
 
-        <LinkExternal href={gameActive.actionUrl ?? ''}>
-          <Button className="rounded-full border-primary text-primary h-10 px-5">
+        <LinkExternal
+          href={gameActive.actionUrl ?? ''}
+          className="mobile:w-full"
+        >
+          <Button className="rounded-full border-primary bg-transparent text-primary h-10 px-5 mobile:w-full">
             Explore <ArrowRight size="24" />
           </Button>
         </LinkExternal>

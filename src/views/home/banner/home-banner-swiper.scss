@@ -52,3 +52,13 @@
     }
   }
 }
+
+@media screen and (max-width: $MAX_WIDTH_MOBILE) {
+  .banner-swiper {
+    &-nav {
+      &-btn {
+        display: none;
+      }
+    }
+  }
+}
