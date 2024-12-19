@@ -10,8 +10,11 @@
     "predev": "ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
     "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx"
   },
+  "resolutions": {
+    "@tanstack/react-query": "^5.59.16"
+  },
   "dependencies": {
-    "@ancient8/components": "^1.1.0",
+    "@ancient8/components": "^1.2.0",
     "@ant-design/cssinjs": "^1.21.1",
     "@ant-design/static-style-extract": "^1.0.3",
     "@rainbow-me/rainbowkit": "^2.2.0",
