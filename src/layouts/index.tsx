@@ -15,9 +15,12 @@ function MainLayout({ children }: PropsWithChildren) {
             baseUrl: `${apiConfig.strapiApi}/side-menus`,
           },
         }}
+        classNames={{
+          /*TODO: remove on next pkg version*/
+          content: 'min-w-[1px] flex-1',
+        }}
       >
-        {/*TODO: update width on mobile later with pkg UI*/}
-        <div className="px-10 mobile:px-4 pt-[27px] w-[calc(100vw_-_71px)]">
+        <div className="px-10 mobile:px-4 pt-[27px]">
           <ThemeProvider>{children}</ThemeProvider>
         </div>
       </Layout>
