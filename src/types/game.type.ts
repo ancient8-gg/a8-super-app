@@ -3,19 +3,14 @@ import { StrapiContent, StrapiMedia } from './strapi.type'
 
 export interface IGame {
   id: number
-  slug: string
   title: string
-  description: string
   thumbnail: StrapiContent<StrapiMedia>
-  cover: StrapiContent<StrapiMedia>
-  genre: string[]
-  blockchain: string[]
-  copyright: string
-  state: string
+  genre?: string[]
+  priority: number
 }
 
 export enum GameSort {
-  NEW = 'GAME_SORT:NEW',
+  PRIORITY = 'GAME_SORT:PRIORITY',
 }
 
 export type GetListGameDto = GetListDto<GameSort>

@@ -25,12 +25,7 @@ function GamesSection() {
               { lg: 16, sm: 12, xs: 12 },
               { lg: 24, sm: 12, xs: 12 },
             ]}
-            justify={{
-              xl: 'space-between',
-              lg: 'start',
-              sm: 'start',
-              xs: 'space-between',
-            }}
+            justify="start"
           >
             {games.map((game, index) => (
               <Col

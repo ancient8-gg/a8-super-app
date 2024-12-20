@@ -5,4 +5,5 @@ export type DAppType = {
     url: string
   }
   tags: string
+  website?: string
 }

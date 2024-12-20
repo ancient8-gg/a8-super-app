@@ -11,15 +11,15 @@ const GAME_CONTROLLER = '/home-games'
 
 class GameService {
   async getList({
-    sort = GameSort.NEW,
+    sort = GameSort.PRIORITY,
     pageSize = DEFAULT_PAGE_SIZE,
     page = DEFAULT_PAGE,
   }: GetListGameDto = {}) {
     const sortValue: string[] = []
     switch (sort) {
-      case GameSort.NEW:
+      case GameSort.PRIORITY:
       default:
-        sortValue.push('createdAt:desc')
+        sortValue.push('priority:asc')
         break
     }
 

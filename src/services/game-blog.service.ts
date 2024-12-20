@@ -13,15 +13,15 @@ const GAME_BLOG_CONTROLLER = '/home-game-blogs'
 
 class GameBlogService {
   async getList({
-    sort = GameBlogSort.NEW,
+    sort = GameBlogSort.PRIORITY,
     page = 1,
     pageSize = 10,
   }: GetListGameBlogDto = {}) {
     const sortValue: string[] = []
     switch (sort) {
-      case GameBlogSort.NEW:
+      case GameBlogSort.PRIORITY:
       default:
-        sortValue.push('createdAt:desc')
+        sortValue.push('priority:asc')
         break
     }
 
