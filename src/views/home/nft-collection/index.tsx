@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { ArrowRight } from 'iconsax-react'
+import clsx from 'clsx'
 
 import { Col, Flex, Row, Typography } from 'antd'
 
@@ -46,12 +47,14 @@ function NftCollection() {
             <Link
               href={locationConfig.nftMarketplace}
               target="_blank"
-              className="flex items-center gap-[10px]"
+              className={clsx(
+                'flex items-center gap-[10px]',
+                'uppercase text-lg mobile:text-sm text-[#F1F2F3] leading-[1.1] font-bold',
+                'hover:!bg-transparent hover:!text-primary',
+              )}
             >
-              <Typography.Text className="uppercase text-lg mobile:text-sm text-[#F1F2F3] leading-[1.1] font-bold">
-                View more
-              </Typography.Text>
-              <ArrowRight size="24" color="#F1F2F3" />
+              View more
+              <ArrowRight size="24" />
             </Link>
           )}
         </Flex>

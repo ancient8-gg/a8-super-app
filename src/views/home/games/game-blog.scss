@@ -17,6 +17,15 @@
     backdrop-filter: blur(25px);
   }
 
+  .blog-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
   .game-thumbnail {
     width: 565px;
   }
@@ -41,6 +50,11 @@
 
     .game-thumbnail {
       width: 100% !important;
+    }
+
+    .blog-description {
+      -webkit-line-clamp: 2 !important;
+      line-clamp: 2 !important;
     }
   }
 }

@@ -4,9 +4,9 @@ export type HomeBanner = {
   title: string
   description: string
   image: string
-  actionTitle: string
   actionUrl: string
   priority: number
+  spotlight?: string
 }
 
 export enum HomeBannerSort {

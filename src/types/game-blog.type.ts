@@ -3,15 +3,16 @@ import { StrapiMedia } from './strapi.type'
 
 export type GameBlog = {
   id: number
-  slug: string
+  website: string
   spotlight: string
   title: string
   description: string
   thumbnail: StrapiContent<StrapiMedia>
+  priority: number
 }
 
 export enum GameBlogSort {
-  NEW = 'GAME_BLOG_SORT:NEW',
+  PRIORITY = 'GAME_BLOG_SORT:PRIORITY',
 }
 
 export type GetListGameBlogDto = GetListDto<GameBlogSort>

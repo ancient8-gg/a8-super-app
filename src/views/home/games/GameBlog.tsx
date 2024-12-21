@@ -9,8 +9,6 @@ import SwiperSlides from '@/components/swiper/SwiperSlides'
 import { useGamesBlog } from '@/hooks/game-blog/useGameBlogs'
 import useIsMobile from '@/hooks/useIsMobile'
 
-import { APP_ROUTES } from '@/constants'
-
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -24,7 +22,7 @@ function GameBlogSection() {
   const gameBlogs = useMemo(() => {
     return gameBlogsData.map((item) => (
       <div className="game-blog__item" key={item.id}>
-        <Flex className="mobile:flex-col mobile:items-center gap-10 mobile:gap-4 w-full">
+        <Flex className="mobile:flex-col gap-10 mobile:gap-4 w-full">
           <div className="game-thumbnail h-[388px] mobile:h-[217px]">
             <Image
               src={item.thumbnail.url}
@@ -50,19 +48,14 @@ function GameBlogSection() {
                 <Typography.Text className="text-[#F1F2F3] text-2xl mobile:text-lg font-bold uppercase leading-[1.1]">
                   {item.title}
                 </Typography.Text>
-                <Typography.Paragraph className="text-[#C4C6CD] text-base mobile:text-sm leading-[1.4] !mb-0">
+                <Typography.Paragraph className="text-[#C4C6CD] text-base mobile:text-sm leading-[1.4] !mb-0 mobile:h-[40px] blog-description">
                   {item.description}
                 </Typography.Paragraph>
               </Flex>
             </Flex>
             <Link
-              href={{
-                pathname: APP_ROUTES.GAME_BLOG_DETAIL,
-                query: {
-                  blogId: item.slug,
-                },
-              }}
-              className="flex justify-center items-center mobile:w-full h-[48px] rounded-3xl bg-[#D8FF76] hover:!bg-[#C7F651] gap-[6px]"
+              href={item.website}
+              className="flex justify-center items-center w-full h-[48px] rounded-3xl bg-[#D8FF76] hover:!bg-[#C7F651] gap-[6px]"
               target="_blank"
             >
               <Typography.Text className="!text-[#090A0B] text-base leading-[1.3] font-bold">

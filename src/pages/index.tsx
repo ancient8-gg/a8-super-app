@@ -9,7 +9,7 @@ import DAppEcosystem from '@/views/home/ecosystem'
 
 function Home() {
   return (
-    <div className="flex flex-col gap-24 mobile:gap-12">
+    <div className="flex flex-col gap-24 mobile:gap-12 max-w-[1304px] mx-auto">
       <BannerSection />
 
       <WidgetSection />
