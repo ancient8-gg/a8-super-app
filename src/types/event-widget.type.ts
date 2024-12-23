@@ -5,4 +5,10 @@ export type EventWidgetType = {
     url: string | null
   }
   startedAt: Date
+  // Social
+  website?: string
+  discord?: string
+  telegram?: string
+  x?: string
+  youtube?: string
 }

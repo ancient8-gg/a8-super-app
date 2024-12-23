@@ -2,7 +2,7 @@ import { useMemo, useState, Fragment } from 'react'
 
 import { Image, Button } from 'antd'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { ArrowLeft } from 'iconsax-react'
 
 import type { HomeBanner } from '@/types'
@@ -31,7 +31,8 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
         <Swiper
           className="banner-swiper-thumb"
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
+          autoplay={{ delay: 7000, disableOnInteraction: false }}
+          modules={[Autoplay, FreeMode, Navigation, Thumbs]}
           onSlideChange={({ activeIndex }) => setActiveIdx(activeIndex)}
           onActiveIndexChange={({ activeIndex }) => setActiveIdx(activeIndex)}
           navigation={{
