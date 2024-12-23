@@ -1,3 +1,7 @@
+import { useQuery } from '@tanstack/react-query'
+import { formatUnits } from 'viem'
+import numbro from 'numbro'
+
 import { Flex, Typography, Button, Image } from 'antd'
 
 import LinkExternal from '@/components/systems/link-external'
@@ -6,8 +10,36 @@ import CardWidget from './CardWidget'
 import { APP_ROUTES } from '@/constants'
 
 import A8TokenRound from '@/assets/icon/token/a8-token-round.png'
+import BlockscoutService from '@/services/blockscout.service'
+
+const STAKING_ADDRESS = '0xd42D4417D7f757BAD6A5EA5E40a53649fD50B349'
+const A8_TOKEN_ADDRESS_ETH = '0x3E5A19c91266aD8cE2477B91585d1856B84062dF'
 
 function StakingWidget() {
+  const { data: a8Balance } = useQuery({
+    queryKey: ['get-a8-balance'],
+    initialData: '0',
+    queryFn: async () => {
+      const { data } =
+        await BlockscoutService.getAddressTokenBalances(STAKING_ADDRESS)
+
+      const A8_TOKEN = data.find(
+        (token) =>
+          token.token.address.toLowerCase() ===
+          A8_TOKEN_ADDRESS_ETH.toLowerCase(),
+      )
+
+      if (A8_TOKEN) {
+        return formatUnits(
+          BigInt(A8_TOKEN.value),
+          Number(A8_TOKEN.token.decimals),
+        )
+      }
+
+      return '0'
+    },
+  })
+
   return (
     <CardWidget bgGradient classname="h-[380px] mobile:h-[183px]">
       <Flex vertical justify="space-between" className="h-full">
@@ -30,7 +62,7 @@ function StakingWidget() {
         >
           <Flex vertical className="mobile:hidden">
             <Typography.Text className="text-[#F1F2F3] font-bold text-[42px]">
-              10M+
+              {`${numbro(a8Balance).format({ average: true, postfix: '+' })}`.toUpperCase()}
             </Typography.Text>
 
             <Typography.Text className="text-xl text-white/30">

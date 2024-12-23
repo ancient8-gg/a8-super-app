@@ -31,7 +31,7 @@ function GameProtocolWidget() {
     )
 
   return (
-    <CardWidget classname="h-[262px] !p-0">
+    <CardWidget classname="h-[262px] !p-0 overflow-hidden">
       <Flex align="center" justify="space-between" className="h-full px-6">
         <Flex vertical gap={12}>
           <Typography.Text className="title-gradient text-[22px]/[22px] font-bold">
