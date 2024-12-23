@@ -19,13 +19,13 @@ function GameCard({ gameDetails }: GameCardProps) {
         className="object-cover rounded-xl"
         preview={false}
       />
-      <div className="w-max absolute z-10 bottom-[27px] mobile:bottom-[5px] left-2/4 -translate-x-2/4 h-[67px] mobile:h-[47px]">
+      <div className="w-max absolute z-10 bottom-[27px] mobile:bottom-[6px] left-2/4 -translate-x-2/4 h-[67px] mobile:h-[47px]">
         <Flex
           className="gap-3 mobile:gap-[6px] text-center"
           vertical
           justify="center"
         >
-          <Typography.Text className="game-title uppercase font-bold text-xl text-white mobile:text-sm leading-[1.2]">
+          <Typography.Text className="game-title uppercase font-bold text-xl text-white mobile:text-sm !leading-[1.2]">
             {title}
           </Typography.Text>
 

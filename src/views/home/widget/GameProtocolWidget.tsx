@@ -12,9 +12,9 @@ function GameProtocolWidget() {
 
   if (isMobile)
     return (
-      <CardWidget classname="h-[262px]">
+      <CardWidget classname="h-[262px] mobile:h-[171px]">
         <Flex vertical gap={10} className="h-full overflow-hidden">
-          <Typography.Text className="title-gradient text-[22px]/[22px] font-bold text-center">
+          <Typography.Text className="title-gradient text-lg leading-[1] font-bold text-center">
             Games
             <br />
             Protocols

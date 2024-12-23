@@ -9,7 +9,12 @@ import EventWidget from './event/EventWidget'
 
 function WidgetSection() {
   return (
-    <Row gutter={[20, 27]}>
+    <Row
+      gutter={[
+        { xl: 20, sm: 8, xs: 8 },
+        { xl: 27, sm: 12, xs: 12 },
+      ]}
+    >
       <Col xs={24} sm={24} lg={12} xl={8}>
         <MarketplaceWidget />
       </Col>
@@ -22,11 +27,11 @@ function WidgetSection() {
         <BridgeWidget />
       </Col>
 
-      <Col xs={24} sm={24} lg={12} xl={9}>
+      <Col xs={12} sm={12} lg={12} xl={9}>
         <SwapWidget />
       </Col>
 
-      <Col xs={24} sm={24} lg={12} xl={8}>
+      <Col xs={12} sm={12} lg={12} xl={8}>
         <GameProtocolWidget />
       </Col>
 

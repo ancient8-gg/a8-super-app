@@ -42,7 +42,7 @@ function NftCollection() {
     >
       <Col span={24}>
         <Flex justify="space-between">
-          <SectionTitle title="NFT Collection" />
+          <SectionTitle title="NFT Collections" />
           {!isMobile && (
             <Link
               href={locationConfig.nftMarketplace}
