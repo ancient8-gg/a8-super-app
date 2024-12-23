@@ -25,14 +25,14 @@ function SwapWidget() {
 
   if (isMobile)
     return (
-      <CardWidget classname="h-full min-h-[170px]">
+      <CardWidget classname="h-full mobile:h-[171px]">
         <Flex
           vertical
           align="center"
           justify="space-between"
           className="h-full"
         >
-          <Typography.Text className="title-gradient text-2xl font-bold">
+          <Typography.Text className="title-gradient text-lg font-bold">
             Swap Token
           </Typography.Text>
 

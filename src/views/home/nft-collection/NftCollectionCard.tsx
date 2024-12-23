@@ -81,7 +81,7 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                   </Typography.Text>
                   <Flex
                     gap={4}
-                    className="mt-2 font-bold text-md"
+                    className="mt-2 mb-1 font-bold text-md"
                     align="center"
                   >
                     <Typography.Text>
@@ -91,7 +91,7 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                   </Flex>
                   <Typography.Text className="text-[#888E8F] text-[12px]">
                     {price !== null && coinUsdRate
-                      ? formatCurrency(price * coinUsdRate, true, 'after')
+                      ? formatCurrency(price * coinUsdRate, true, 'before')
                       : '--'}
                   </Typography.Text>
                 </Flex>
@@ -106,7 +106,7 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                   </Typography.Text>
                   <Flex
                     gap={4}
-                    className="mt-2 font-bold text-md mobile:text-sm leading-[1.4]"
+                    className="mt-2 mb-1 font-bold text-md mobile:text-sm leading-[1.4]"
                     align="center"
                   >
                     <Typography.Text>
@@ -118,7 +118,7 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                     {formatCurrency(
                       (volumeData?.['all'].volume || 0) * coinUsdRate,
                       true,
-                      'after',
+                      'before',
                     )}
                   </Typography.Text>
                 </Flex>
