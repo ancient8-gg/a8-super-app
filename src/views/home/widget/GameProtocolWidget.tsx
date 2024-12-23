@@ -50,7 +50,7 @@ function GameProtocolWidget() {
         </Flex>
 
         <Image
-          className="!h-[262px]"
+          className="!h-[262px] !w-[unset]"
           src={GameProtocolImg.src}
           alt="games-protocol"
           preview={false}

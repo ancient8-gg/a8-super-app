@@ -66,7 +66,7 @@ function CardNft({ collection }: CardNftProps) {
           <Flex align="center" gap={13}>
             <Image
               src={collection.thumbnail.url ?? NftThumbnail.src}
-              className="rounded-lg w-10 !h-10 aspect-square object-cover"
+              className="rounded-lg !w-10 !h-10 aspect-square object-cover"
               alt="nft-thumbnail"
               preview={false}
             />
@@ -95,7 +95,7 @@ function CardNft({ collection }: CardNftProps) {
 
               <Image
                 src={A8Token.src}
-                className="w-[14px] !h-[14px]"
+                className="!w-[14px] !h-[14px]"
                 alt="a8-token"
                 preview={false}
               />
@@ -122,7 +122,7 @@ function CardNft({ collection }: CardNftProps) {
 
               <Image
                 src={A8Token.src}
-                className="w-[14px] !h-[14px]"
+                className="!w-[14px] !h-[14px]"
                 alt="a8-token"
                 preview={false}
               />

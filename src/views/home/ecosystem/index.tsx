@@ -63,14 +63,11 @@ function DAppEcosystem() {
         align="end"
         className="relative w-full h-[450px] mobile:h-[155px]"
       >
-        <video
-          autoPlay
-          loop
-          muted
+        <img
+          src="/video/controller.gif"
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[360px] mobile:w-[160px] mobile:h-[137px]"
-        >
-          <source src="/video/controller.webm" type="video/mp4" />
-        </video>
+          alt="controller"
+        />
 
         <div className="w-full mobile:w-[344px]">
           <Brand />
