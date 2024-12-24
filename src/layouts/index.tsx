@@ -15,7 +15,7 @@ function MainLayout({ children }: PropsWithChildren) {
             baseUrl: `${apiConfig.strapiApi}/side-menus`,
           },
           header: {
-            baseUrl: `${apiConfig.strapiApi}/menus`,
+            baseUrl: `${apiConfig.strapiApi}/user-nav-menus`,
             startsA8Proxy: proxyConfig.coingeckoProxy,
           },
         }}
