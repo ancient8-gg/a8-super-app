@@ -39,15 +39,16 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
             nextEl: '.banner-swiper-nav-btn-next',
             prevEl: '.banner-swiper-nav-btn-prev',
           }}
+          spaceBetween={10}
         >
           {validItems.map((item, idx) => (
-            <SwiperSlide key={idx}>
+            <SwiperSlide key={idx} className="cursor-grab">
               <Image
                 src={item.image}
                 alt="game-banner"
                 preview={false}
                 rootClassName="w-full"
-                className="aspect-[3/1] mobile:aspect-[5/3] object-cover"
+                className="aspect-[3/1] mobile:aspect-[5/3] object-cover rounded-md"
               />
             </SwiperSlide>
           ))}
@@ -75,7 +76,7 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
         centerInsufficientSlides
       >
         {validItems.map((item, idx) => (
-          <SwiperSlide key={idx} className="!w-fit">
+          <SwiperSlide key={idx} className="!w-fit cursor-pointer">
             <Image
               src={item.image}
               alt="game-banner"

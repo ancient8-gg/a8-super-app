@@ -4,7 +4,6 @@ import numbro from 'numbro'
 
 import { Flex, Typography, Button, Image } from 'antd'
 
-import LinkExternal from '@/components/systems/link-external'
 import CardWidget from './CardWidget'
 
 import { APP_ROUTES } from '@/constants'
@@ -70,14 +69,14 @@ function StakingWidget() {
             </Typography.Text>
           </Flex>
 
-          <LinkExternal href={APP_ROUTES.STAKING}>
+          <a href={APP_ROUTES.STAKING}>
             <Button
               type="primary"
               className="h-[52px] mobile:h-[36px] mobile:text-sm font-bold uppercase"
             >
               Stake Now
             </Button>
-          </LinkExternal>
+          </a>
         </Flex>
       </Flex>
     </CardWidget>

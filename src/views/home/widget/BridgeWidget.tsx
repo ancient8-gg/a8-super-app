@@ -1,7 +1,6 @@
 import { Flex, Typography, Button, Image } from 'antd'
 
 import CardWidget from './CardWidget'
-import LinkExternal from '@/components/systems/link-external'
 
 import useIsMobile from '@/hooks/useIsMobile'
 
@@ -47,14 +46,14 @@ function BridgeWidget() {
           </div>
         </Flex>
 
-        <LinkExternal href={APP_ROUTES.BRIDGE}>
+        <a href={APP_ROUTES.BRIDGE}>
           <Button
             type="primary"
             className="h-[52px] mobile:h-[36px] mobile:text-sm font-bold uppercase"
           >
-            {!isMobile ? 'Explore all bridge routes >' : 'EXPLORE'}
+            {!isMobile ? 'Explore all bridge routes' : 'EXPLORE'}
           </Button>
-        </LinkExternal>
+        </a>
       </Flex>
     </CardWidget>
   )

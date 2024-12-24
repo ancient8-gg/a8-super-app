@@ -4,4 +4,5 @@ export const APP_ROUTES = {
   BRIDGE: '/bridge',
   GAME_DETAIL: '/games/[gameId]',
   GAME_BLOG_DETAIL: '/games-blogs/[blogId]',
+  SWAP: '/swap',
 }
