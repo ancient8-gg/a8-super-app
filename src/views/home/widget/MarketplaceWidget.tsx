@@ -4,17 +4,16 @@ import numbro from 'numbro'
 import { Flex, Typography, Button, Image } from 'antd'
 import Icon from '@ant-design/icons'
 
-import LinkExternal from '@/components/systems/link-external'
 import CardWidget from './CardWidget'
 
 import { useNftCollections } from '@/hooks/nft-collection/useNftCollections'
 import { useBestByCollection } from '@/hooks/listing/useBestListingByToken'
 import { useCollectionVolume } from '@/hooks/statistic/useCollectionVolume'
+import { useGetCoinUsdPrice } from '@/hooks/currency-pricing/useTokenUsdPrice'
 import { formatPrice } from '@/utils/currency.util'
-import { useUsdPrice } from '@/hooks/useUsdPrice'
 
 import locationConfig from '@/configs/location.config'
-import { APP_ROUTES } from '@/constants'
+import { APP_ROUTES, TokenSymbol } from '@/constants'
 
 import { FireIcon, VerifyIcon } from '@/assets/icon'
 
@@ -47,7 +46,9 @@ function CardNft({ collection }: CardNftProps) {
     address: collection.address,
   })
 
-  const { ancient8 } = useUsdPrice()
+  const { data: coinUsdRate } = useGetCoinUsdPrice(
+    volumeData?.['all']?.currency as TokenSymbol,
+  )
 
   const price = useMemo(() => {
     if (!best?.listings || best.listings.length === 0) return null
@@ -58,9 +59,7 @@ function CardNft({ collection }: CardNftProps) {
   }, [best])
 
   return (
-    <LinkExternal
-      href={`${locationConfig.nftMarketplace}/collections/${collection.slug}`}
-    >
+    <a href={`${locationConfig.nftMarketplace}/collections/${collection.slug}`}>
       <Flex vertical className="card-nft" gap={12}>
         <Flex justify="space-between" align="center">
           <Flex align="center" gap={13}>
@@ -102,7 +101,7 @@ function CardNft({ collection }: CardNftProps) {
 
               <Typography.Text className="text-[13px] text-[#888E8F]">
                 {price !== null
-                  ? numbro((price ?? 0) * ancient8).format(
+                  ? numbro((price ?? 0) * coinUsdRate).format(
                       numbroFormatCurrencyOptions,
                     )
                   : '--'}
@@ -130,7 +129,7 @@ function CardNft({ collection }: CardNftProps) {
               <Typography.Text className="text-[13px] text-[#888E8F]">
                 {volumeData?.['all']?.volume !== null
                   ? numbro(
-                      (volumeData?.['all']?.volume ?? 0) * ancient8,
+                      (volumeData?.['all']?.volume ?? 0) * coinUsdRate,
                     ).format(numbroFormatCurrencyOptions)
                   : '--'}
               </Typography.Text>
@@ -138,7 +137,7 @@ function CardNft({ collection }: CardNftProps) {
           </Flex>
         </Flex>
       </Flex>
-    </LinkExternal>
+    </a>
   )
 }
 
@@ -153,11 +152,11 @@ function MarketplaceWidget() {
             Marketplace
           </Typography.Text>
 
-          <LinkExternal href={APP_ROUTES.MARKETPLACE}>
+          <a href={APP_ROUTES.MARKETPLACE}>
             <Button type="primary" className="h-10 w-[128px] font-bold">
               EXPLORE
             </Button>
-          </LinkExternal>
+          </a>
         </Flex>
 
         <Flex vertical gap={12}>

@@ -12,6 +12,10 @@
       img {
         border-radius: 12px;
         border: 1.4px solid rgba(255, 255, 255, 0.12);
+
+        &:hover {
+          border: 1.4px solid $PRIMARY;
+        }
       }
 
       &-thumb-active {
