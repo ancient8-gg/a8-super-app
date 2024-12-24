@@ -4,7 +4,7 @@ import { Layout } from '@ancient8/components'
 import ThemeProvider from '@/providers/ThemeProvider'
 import CsrProvider from '@/providers/CsrProvider'
 
-import { apiConfig } from '@/configs'
+import { apiConfig, proxyConfig } from '@/configs'
 
 function MainLayout({ children }: PropsWithChildren) {
   return (
@@ -14,10 +14,10 @@ function MainLayout({ children }: PropsWithChildren) {
           sider: {
             baseUrl: `${apiConfig.strapiApi}/side-menus`,
           },
-        }}
-        classNames={{
-          /*TODO: remove on next pkg version*/
-          content: 'min-w-[1px] flex-1',
+          header: {
+            baseUrl: `${apiConfig.strapiApi}/menus`,
+            startsA8Proxy: proxyConfig.coingeckoProxy,
+          },
         }}
       >
         <div className="px-10 mobile:px-4 pt-[27px]">

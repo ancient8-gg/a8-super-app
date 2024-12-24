@@ -1,4 +1,4 @@
-import { sepolia, ancient8 } from 'viem/chains'
+import { sepolia, ancient8, ancient8Sepolia, mainnet } from 'viem/chains'
 import {
   type Chain as RainbowKitChain,
   getDefaultConfig,
@@ -12,10 +12,18 @@ import {
 } from '@rainbow-me/rainbowkit/wallets'
 import * as allWallets from '@rainbow-me/rainbowkit/wallets'
 
-const supportedChains = [sepolia, ancient8] as [
-  RainbowKitChain,
-  ...RainbowKitChain[],
-]
+import A8Logo from '@/assets/img/logo/a8-logo-chain.png'
+
+const supportedChains =
+  process.env.NEXT_PUBLIC_ENV === 'production'
+    ? ([mainnet, { ...ancient8, iconUrl: A8Logo.src }] as [
+        RainbowKitChain,
+        ...RainbowKitChain[],
+      ])
+    : ([sepolia, { ...ancient8Sepolia, iconUrl: A8Logo.src }] as [
+        RainbowKitChain,
+        ...RainbowKitChain[],
+      ])
 
 export const wagmiConfig = getDefaultConfig({
   appName: 'a8-super-app',

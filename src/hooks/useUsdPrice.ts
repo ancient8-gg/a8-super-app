@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 
-import { apiConfig } from '@/configs'
+import { proxyConfig } from '@/configs'
 
 export type TokenIdType = 'ethereum' | 'ancient8'
 
@@ -11,12 +11,12 @@ export const useUsdPrice = () => {
   const { data: price } = useQuery({
     queryKey: ['usd-price'],
     initialData: {
-      ancient8: { usd: 2.2 },
-      ethereum: { usd: 2400 },
+      ancient8: { usd: 0.4 },
+      ethereum: { usd: 3400 },
     } as ResType,
     queryFn: async () => {
       const { data } = await axios.get<ResType>(
-        `${apiConfig.bridgeApi}/price`,
+        `${proxyConfig.coingeckoProxy}/coingecko/simple/price`,
         {
           params: {
             ids: 'ancient8,ethereum',
