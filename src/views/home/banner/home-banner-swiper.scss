@@ -12,6 +12,10 @@
       img {
         border-radius: 12px;
         border: 1.4px solid rgba(255, 255, 255, 0.12);
+
+        &:hover {
+          border: 1.4px solid $PRIMARY;
+        }
       }
 
       &-thumb-active {
@@ -48,6 +52,16 @@
       &.swiper-button-disabled {
         border: 1px solid rgba(196, 198, 205, 0.12);
         color: #a3a5ae;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $MAX_WIDTH_MOBILE) {
+  .banner-swiper {
+    &-nav {
+      &-btn {
+        display: none;
       }
     }
   }

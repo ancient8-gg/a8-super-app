@@ -2,22 +2,29 @@ import type { PropsWithChildren, ReactNode } from 'react'
 import { Layout } from '@ancient8/components'
 
 import ThemeProvider from '@/providers/ThemeProvider'
+import CsrProvider from '@/providers/CsrProvider'
 
-import { apiConfig } from '@/configs'
+import { apiConfig, proxyConfig } from '@/configs'
 
 function MainLayout({ children }: PropsWithChildren) {
   return (
-    <Layout
-      config={{
-        sider: {
-          baseUrl: `${apiConfig.strapiApi}/side-menus`,
-        },
-      }}
-    >
-      <div className="px-10 pt-[27px] w-[calc(100vw_-_71px)]">
-        <ThemeProvider>{children}</ThemeProvider>
-      </div>
-    </Layout>
+    <CsrProvider>
+      <Layout
+        config={{
+          sider: {
+            baseUrl: `${apiConfig.strapiApi}/side-menus`,
+          },
+          header: {
+            baseUrl: `${apiConfig.strapiApi}/user-nav-menus`,
+            startsA8Proxy: proxyConfig.coingeckoProxy,
+          },
+        }}
+      >
+        <div className="px-10 mobile:px-4 pt-[27px]">
+          <ThemeProvider>{children}</ThemeProvider>
+        </div>
+      </Layout>
+    </CsrProvider>
   )
 }
 

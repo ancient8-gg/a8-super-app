@@ -1,20 +1,26 @@
-import BannerSection from '@/views/home/banner/BannerSection'
-// import HotRewardSection from '@/views/home/hot-reward/HotRewardSection'
+import { Footer } from '@ancient8/components'
+
 import { getMainLayout } from '@/layouts'
+import BannerSection from '@/views/home/banner/BannerSection'
+import GamesSection from '@/views/home/games'
+import WidgetSection from '@/views/home/widget'
+import NftCollection from '@/views/home/nft-collection'
+import DAppEcosystem from '@/views/home/ecosystem'
 
 function Home() {
   return (
-    <div>
+    <div className="flex flex-col gap-24 mobile:gap-12 max-w-[1304px] mx-auto">
       <BannerSection />
-      {/* <HotRewardSection /> */}
 
-      {/*<Image*/}
-      {/*  src="/fakelove.jpg"*/}
-      {/*  alt="Fake Love"*/}
-      {/*  layout="responsive"*/}
-      {/*  width={100}*/}
-      {/*  height={100}*/}
-      {/*/>*/}
+      <WidgetSection />
+
+      <GamesSection />
+
+      <NftCollection />
+
+      <DAppEcosystem />
+
+      <Footer />
     </div>
   )
 }

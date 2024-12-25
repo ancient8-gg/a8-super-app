@@ -1,0 +1,14 @@
+@import '@/theme/vars';
+
+.card-dapp {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  &:hover {
+    border: 1px solid $PRIMARY;
+  }
+
+  &-thumbnail {
+    background: url('/img/border-dapp-thumbnail.svg') no-repeat center;
+  }
+}

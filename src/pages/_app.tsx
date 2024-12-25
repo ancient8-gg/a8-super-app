@@ -12,7 +12,7 @@ import { wagmiConfig } from '@/configs'
 import '../../public/antd.min.css'
 import '@ancient8/components/styles.scss'
 import '@rainbow-me/rainbowkit/styles.css'
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 
 export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode

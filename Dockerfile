@@ -1,15 +1,16 @@
 FROM public.ecr.aws/docker/library/node:20-alpine
 
+# Install jq for JSON parsing
+RUN apk add --no-cache jq
+
 # Set environment variables
-ARG WAGMI_PROJECT_ID
-ARG STRAPI_API
-ARG APP_ENV
-ENV NEXT_PUBLIC_WAGMI_PROJECT_ID=${WAGMI_PROJECT_ID}
-ENV NEXT_PUBLIC_STRAPI_API=${STRAPI_API}
-ENV NEXT_PUBLIC_ENV=${APP_ENV}
+ARG APP_CONFIG
 
 WORKDIR /usr/app
 COPY . .
+
+# Convert APP_CONFIG JSON into .env format and save to .env file
+RUN echo $APP_CONFIG | jq -r 'to_entries | .[] | "\(.key)=\(.value)"' > .env
 
 RUN yarn install
 RUN yarn build

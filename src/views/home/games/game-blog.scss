@@ -1,0 +1,60 @@
+@import '@/theme/vars';
+
+.game-blog-container {
+  .swiper-button-disabled {
+    display: none;
+  }
+
+  .game-blog__item {
+    display: flex;
+    height: 428px;
+    padding: 20px;
+    align-items: flex-start;
+    gap: 40px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+  }
+
+  .blog-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .game-thumbnail {
+    width: 565px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    .game-thumbnail {
+      width: 400px !important;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .game-thumbnail {
+      width: 300px !important;
+    }
+  }
+
+  @media screen and (max-width: $MAX_WIDTH_MOBILE) {
+    .game-blog__item {
+      border: none;
+      padding: 0;
+    }
+
+    .game-thumbnail {
+      width: 100% !important;
+    }
+
+    .blog-description {
+      -webkit-line-clamp: 2 !important;
+      line-clamp: 2 !important;
+    }
+  }
+}

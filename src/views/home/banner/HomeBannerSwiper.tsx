@@ -2,7 +2,7 @@ import { useMemo, useState, Fragment } from 'react'
 
 import { Image, Button } from 'antd'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { ArrowLeft } from 'iconsax-react'
 
 import type { HomeBanner } from '@/types'
@@ -31,22 +31,24 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
         <Swiper
           className="banner-swiper-thumb"
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
+          autoplay={{ delay: 7000, disableOnInteraction: false }}
+          modules={[Autoplay, FreeMode, Navigation, Thumbs]}
           onSlideChange={({ activeIndex }) => setActiveIdx(activeIndex)}
           onActiveIndexChange={({ activeIndex }) => setActiveIdx(activeIndex)}
           navigation={{
             nextEl: '.banner-swiper-nav-btn-next',
             prevEl: '.banner-swiper-nav-btn-prev',
           }}
+          spaceBetween={10}
         >
           {validItems.map((item, idx) => (
-            <SwiperSlide key={idx}>
+            <SwiperSlide key={idx} className="cursor-grab">
               <Image
                 src={item.image}
                 alt="game-banner"
                 preview={false}
                 rootClassName="w-full"
-                className="aspect-[36/10] object-cover"
+                className="aspect-[3/1] mobile:aspect-[5/3] object-cover rounded-md"
               />
             </SwiperSlide>
           ))}
@@ -74,13 +76,13 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
         centerInsufficientSlides
       >
         {validItems.map((item, idx) => (
-          <SwiperSlide key={idx} className="!w-fit">
+          <SwiperSlide key={idx} className="!w-fit cursor-pointer">
             <Image
               src={item.image}
               alt="game-banner"
               preview={false}
-              rootClassName="banner-nav-img w-[170px]"
-              className="aspect-[17/10] !h-[100px]"
+              rootClassName="banner-nav-img w-[170px] mobile:w-[124px]"
+              className="aspect-[17/10] !h-[100px] mobile:!h-[73px]"
             />
           </SwiperSlide>
         ))}
