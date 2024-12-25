@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         description="Join Ancient8 App to unlock a new era of Web3 gaming. Experience innovative tools, community engagement, and access to hundreds of games in one powerful platform."
       >
         <meta charSet="UTF-8" />
-        <link rel="icon" type="image/png" href="/img/favicon.png" />
+        <link rel="icon" type="image/png" href="/ancient8.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </SEO>
 
