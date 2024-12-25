@@ -1,6 +1,7 @@
 import { Footer } from '@ancient8/components'
 
 import { getMainLayout } from '@/layouts'
+import SEO from '@/components/seo/SEO'
 import BannerSection from '@/views/home/banner/BannerSection'
 import GamesSection from '@/views/home/games'
 import WidgetSection from '@/views/home/widget'
@@ -9,19 +10,26 @@ import DAppEcosystem from '@/views/home/ecosystem'
 
 function Home() {
   return (
-    <div className="flex flex-col gap-24 mobile:gap-12 max-w-[1304px] mx-auto">
-      <BannerSection />
+    <>
+      <SEO
+        title="Ancient8 App | Build on the Edge of Gaming"
+        description="Join Ancient8 App to unlock a new era of Web3 gaming. Experience innovative tools, community engagement, and access to hundreds of games in one powerful platform."
+      />
 
-      <WidgetSection />
+      <div className="flex flex-col gap-24 mobile:gap-12 max-w-[1304px] mx-auto">
+        <BannerSection />
 
-      <GamesSection />
+        <WidgetSection />
 
-      <NftCollection />
+        <GamesSection />
 
-      <DAppEcosystem />
+        <NftCollection />
 
-      <Footer />
-    </div>
+        <DAppEcosystem />
+
+        <Footer />
+      </div>
+    </>
   )
 }
 
