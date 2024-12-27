@@ -6,7 +6,9 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #101010;
 
+  transition: $TRANSITION_MAIN;
+
   &:hover {
-    border: 1px solid $PRIMARY;
+    background: rgba(255, 255, 255, 0.04);
   }
 }

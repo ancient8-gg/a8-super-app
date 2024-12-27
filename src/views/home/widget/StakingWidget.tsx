@@ -64,7 +64,7 @@ function StakingWidget() {
               {`${numbro(a8Balance).format({ average: true, postfix: '+' })}`.toUpperCase()}
             </Typography.Text>
 
-            <Typography.Text className="text-xl text-white/30">
+            <Typography.Text className="text-base text-white/50">
               $A8 Staked
             </Typography.Text>
           </Flex>
