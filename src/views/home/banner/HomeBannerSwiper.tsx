@@ -20,6 +20,7 @@ type HomeBannerSwiperProps = {
 
 function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+  const [autoplayPercentage, setAutoplayPercentage] = useState(0)
 
   const validItems = useMemo(() => items.filter((e) => !!e), [items])
 
@@ -35,6 +36,10 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
           modules={[Autoplay, FreeMode, Navigation, Thumbs]}
           onSlideChange={({ activeIndex }) => setActiveIdx(activeIndex)}
           onActiveIndexChange={({ activeIndex }) => setActiveIdx(activeIndex)}
+          onAutoplayTimeLeft={(_, __, percentage) => {
+            const percentageValue = Number((1 - percentage) * 100)
+            setAutoplayPercentage(percentageValue)
+          }}
           navigation={{
             nextEl: '.banner-swiper-nav-btn-next',
             prevEl: '.banner-swiper-nav-btn-prev',
@@ -52,16 +57,23 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
               />
             </SwiperSlide>
           ))}
+          <Fragment>
+            <Button className="banner-swiper-nav-btn banner-swiper-nav-btn-prev">
+              <ArrowLeft size="24" />
+            </Button>
+            <Button className="banner-swiper-nav-btn banner-swiper-nav-btn-next">
+              <ArrowLeft size="24" className="rotate-180" />
+            </Button>
+          </Fragment>
         </Swiper>
+      </div>
 
-        <Fragment>
-          <Button className="banner-swiper-nav-btn banner-swiper-nav-btn-prev">
-            <ArrowLeft size="24" />
-          </Button>
-          <Button className="banner-swiper-nav-btn banner-swiper-nav-btn-next">
-            <ArrowLeft size="24" className="rotate-180" />
-          </Button>
-        </Fragment>
+      {/*Progress bar for timeline switch next slide*/}
+      <div className="h-1 rounded-full bg-[rgba(216,255,118,0.20)] mt-2">
+        <div
+          className="h-1 rounded-full bg-primary"
+          style={{ width: `${autoplayPercentage}%` }}
+        ></div>
       </div>
 
       <Swiper

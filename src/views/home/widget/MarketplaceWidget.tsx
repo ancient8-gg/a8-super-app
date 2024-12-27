@@ -82,7 +82,7 @@ function CardNft({ collection }: CardNftProps) {
         </Flex>
 
         <Flex justify="space-between">
-          <Flex vertical gap={4}>
+          <Flex vertical gap={8}>
             <Typography.Text className="text-[13px] text-[#888E8F]">
               Floor Price
             </Typography.Text>
@@ -109,7 +109,7 @@ function CardNft({ collection }: CardNftProps) {
             </Flex>
           </Flex>
 
-          <Flex vertical gap={4}>
+          <Flex vertical gap={8}>
             <Typography.Text className="text-[13px] text-[#888E8F]">
               Volume
             </Typography.Text>

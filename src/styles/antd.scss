@@ -1,4 +1,8 @@
 .a8-super-app-btn-primary {
   border-radius: 9999px;
   color: black !important;
+
+  &:hover {
+    background: #c7f651 !important;
+  }
 }

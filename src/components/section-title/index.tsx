@@ -15,7 +15,7 @@ const SectionTitle = ({ title, className }: SectionTitleProps) => {
     <Typography.Title
       level={3}
       className={clsx(
-        'section-title font-bold uppercase !text-[50px] mobile:!text-xl',
+        'section-title font-bold uppercase !text-[50px] mobile:!text-xl w-fit',
         className,
       )}
     >
