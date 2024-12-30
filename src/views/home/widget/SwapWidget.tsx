@@ -1,14 +1,14 @@
 import numbro from 'numbro'
+import { useWindowSize } from 'react-use'
 
-import { Flex, Typography, Image, Divider } from 'antd'
-import Icon from '@ant-design/icons'
+import { Flex, Typography, Image } from 'antd'
 
 import CardWidget from './CardWidget'
 
 import useIsMobile from '@/hooks/useIsMobile'
 import { useGetCoinUsdPrice } from '@/hooks/currency-pricing/useTokenUsdPrice'
 
-import { Swap } from '@/assets/img/widget'
+import Swap from '@/assets/img/widget/swap.png'
 import EthToken from '@/assets/icon/token/token-eth.png'
 import A8Token from '@/assets/icon/token/token-a8.png'
 
@@ -23,6 +23,7 @@ const numbroFormatCurrencyOptions: numbro.Format = {
 
 function SwapWidget() {
   const isMobile = useIsMobile()
+  const { width: windowWidth } = useWindowSize()
 
   const { data: ancient8 } = useGetCoinUsdPrice(TokenSymbol.A8)
   const { data: ethereum } = useGetCoinUsdPrice(TokenSymbol.ETH)
@@ -49,29 +50,6 @@ function SwapWidget() {
               <Flex align="center" gap={8}>
                 <Image
                   rootClassName="w-[18px] h-[18px]"
-                  src={A8Token.src}
-                  alt="a8-token"
-                  preview={false}
-                />
-
-                <Typography.Text className="text-xs text-[#C4C6CD]">
-                  ETH
-                </Typography.Text>
-              </Flex>
-
-              <Typography.Text className="text-[13px] text-[#F1F2F3] font-medium">
-                ${numbro(ancient8).format(numbroFormatCurrencyOptions)}
-              </Typography.Text>
-            </Flex>
-
-            <Flex
-              align="center"
-              justify="space-between"
-              className="w-[140px] h-[34px] border border-white/12 rounded-full px-2 bg-white/3"
-            >
-              <Flex align="center" gap={8}>
-                <Image
-                  rootClassName="w-[18px] h-[18px]"
                   src={EthToken.src}
                   alt="eth-token"
                   preview={false}
@@ -84,6 +62,29 @@ function SwapWidget() {
 
               <Typography.Text className="text-[13px] text-[#F1F2F3] font-medium">
                 ${numbro(ethereum).format(numbroFormatCurrencyOptions)}
+              </Typography.Text>
+            </Flex>
+
+            <Flex
+              align="center"
+              justify="space-between"
+              className="w-[140px] h-[34px] border border-white/12 rounded-full px-2 bg-white/3"
+            >
+              <Flex align="center" gap={8}>
+                <Image
+                  rootClassName="w-[18px] h-[18px]"
+                  src={A8Token.src}
+                  alt="a8-token"
+                  preview={false}
+                />
+
+                <Typography.Text className="text-xs text-[#C4C6CD]">
+                  A8
+                </Typography.Text>
+              </Flex>
+
+              <Typography.Text className="text-[13px] text-[#F1F2F3] font-medium">
+                ${numbro(ancient8).format(numbroFormatCurrencyOptions)}
               </Typography.Text>
             </Flex>
           </Flex>
@@ -96,59 +97,76 @@ function SwapWidget() {
       <CardWidget classname="h-full min-h-[262px]">
         <Flex vertical justify="space-between" className="h-full">
           <Flex justify="space-between" align="center">
-            <Flex vertical gap={12}>
+            <Flex vertical gap={6}>
               <Typography.Text className="title-gradient text-2xl font-bold">
                 Swap Token
               </Typography.Text>
 
               <Typography.Text className="text-white/50 text-base">
-                Swap any ERC tokens
+                Swap tokens on Ancient8 Chain
               </Typography.Text>
             </Flex>
 
-            <Icon component={Swap} />
+            <Image
+              rootClassName="w-[70px] h-[70px]"
+              src={Swap.src}
+              alt="swap"
+              preview={false}
+            />
           </Flex>
 
           <Flex
             justify="space-between"
-            className="w-full border border-white/12 rounded-full p-4 bg-white/[0.02]"
+            gap={8}
+            vertical={
+              (windowWidth < 1370 && windowWidth >= 1200) ||
+              (windowWidth >= 992 && windowWidth < 1040)
+            }
           >
-            <Flex align="center" gap={12}>
+            <Flex
+              justify="space-between"
+              align="center"
+              gap={12}
+              className="border border-white/12 rounded-full p-2 py-1.5 pr-3 bg-white/3 basis-1/2"
+            >
               <Flex align="center" gap={8}>
                 <Image
-                  rootClassName="w-9 h-9"
+                  rootClassName="w-8 h-8"
                   src={EthToken.src}
                   alt="eth-token"
                   preview={false}
                 />
 
-                <Typography.Text className="text-[18px] text-[#C4C6CD] font-medium">
+                <Typography.Text className="text-base text-[#C4C6CD] font-medium">
                   ETH
                 </Typography.Text>
               </Flex>
 
-              <Typography.Text className="text-[18px] text-[#F1F2F3] font-medium">
+              <Typography.Text className="text-base text-[#F1F2F3] font-medium">
                 ${numbro(ethereum).format(numbroFormatCurrencyOptions)}
               </Typography.Text>
             </Flex>
 
-            <Divider type="vertical" className="h-[30px]" />
-
-            <Flex align="center" gap={12}>
+            <Flex
+              justify="space-between"
+              align="center"
+              gap={12}
+              className="border border-white/12 rounded-full p-2 py-1.5 pr-3 bg-white/3 basis-1/2"
+            >
               <Flex align="center" gap={8}>
                 <Image
-                  rootClassName="w-9 h-9"
+                  rootClassName="w-8 h-8"
                   src={A8Token.src}
                   alt="a8-token"
                   preview={false}
                 />
 
-                <Typography.Text className="text-[18px] text-[#C4C6CD] font-medium">
+                <Typography.Text className="text-base text-[#C4C6CD] font-medium">
                   A8
                 </Typography.Text>
               </Flex>
 
-              <Typography.Text className="text-[18px] text-[#F1F2F3] font-medium">
+              <Typography.Text className="text-base text-[#F1F2F3] font-medium">
                 ${numbro(ancient8).format(numbroFormatCurrencyOptions)}
               </Typography.Text>
             </Flex>

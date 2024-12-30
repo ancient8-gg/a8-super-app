@@ -23,8 +23,9 @@ function DAppEcosystem() {
           target="_blank"
           type="text"
           className={clsx(
-            'bg-transparent text-[#F1F2F3] text-[18px] font-bold',
+            'bg-transparent text-[#F1F2F3] text-[18px] font-bold pr-0',
             'hover:!bg-transparent hover:!text-primary',
+            'transition',
             'mobile:hidden',
           )}
         >

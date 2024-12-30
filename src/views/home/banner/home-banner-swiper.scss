@@ -5,8 +5,18 @@
     margin-top: 20px;
   }
 
+  &-thumb {
+    &:hover {
+      .banner-swiper-nav-btn {
+        opacity: 1;
+        display: flex !important;
+        z-index: 999;
+      }
+    }
+  }
+
   &-nav {
-    margin-top: 20px;
+    margin-top: 24px;
 
     .swiper-slide {
       img {
@@ -32,10 +42,12 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 999;
       border: 1px solid #c4c6cd;
       background: rgba(0, 0, 0, 0.12);
       backdrop-filter: blur(12px);
+      opacity: 0;
+      z-index: -1;
+      transition: $TRANSITION_MAIN;
 
       &:hover {
         background: rgba(0, 0, 0, 0.12) !important;

@@ -46,10 +46,12 @@ function CardDApp({ data }: CardDAppProps) {
         >
           <Flex
             align="center"
-            className="card-dapp-thumbnail w-[44px] h-[44px]"
+            justify="center"
+            className="card-dapp-thumbnail w-20 h-20"
           >
             <Image
-              rootClassName="w-full"
+              rootClassName="w-12 h-12"
+              className="!h-12"
               src={thumbnail.url ?? ''}
               alt="dapp-thumbnail"
               preview={false}
