@@ -33,8 +33,11 @@ const BannerSection = () => {
         <MenuIcon size="12" variant="Bold" />
       </Flex>
 
-      <Flex className="justify-between items-end mobile:flex-col mobile:gap-5">
-        <SectionTitle title={gameActive?.title} />
+      <Flex className="justify-between items-end mobile:flex-col mobile:items-start mobile:gap-5">
+        <SectionTitle
+          title={gameActive?.title}
+          className="h-[120px] mobile:h-fit"
+        />
 
         <LinkExternal
           href={gameActive?.actionUrl ?? ''}

@@ -40,7 +40,7 @@ function GameProtocolWidget() {
             Protocols
           </Typography.Text>
 
-          <Typography.Text className="text-white/50 leading-4 font-medium">
+          <Typography.Text className="text-white/50 leading-4">
             50+ Games &
             <br />
             Protocols

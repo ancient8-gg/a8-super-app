@@ -12,15 +12,16 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@ancient8/components@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@ancient8/components/-/components-1.3.0.tgz#06800ee9b723b83fce87a06ff9befeef38e74362"
-  integrity sha512-tl+rEZhpgMbIiifGk6P/TcEEgiXtKsjOo+167zBCvRuRS0YNqpcl2gsDyG5DWejZIxxkO5G83vNULy/9ppKn6w==
+"@ancient8/components@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ancient8/components/-/components-2.0.0.tgz#490f90c9d36a7c0472ee2b502e3131bbb9eeb97c"
+  integrity sha512-qr/JiS4g2HYFgzxs1ggxjEJHtDFdebJFsh4uUgRdGFNJE+vpc54gA/sgH0wMQPJCxLZdxanMSgqS/ZTIle1vuA==
   dependencies:
     "@rainbow-me/rainbowkit" "^2.2.0"
     "@tanstack/react-query" "^5.0.0"
     antd "^5.21.6"
     clsx "^2.1.1"
+    copy-to-clipboard "^3.3.3"
     react "^18.0.0"
     react-dom "^18.0.0"
     viem "^2.0.0"
