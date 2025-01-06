@@ -7,6 +7,7 @@ export interface IGame {
   thumbnail: StrapiContent<StrapiMedia>
   genre?: string[]
   priority: number
+  website: string
 }
 
 export enum GameSort {
