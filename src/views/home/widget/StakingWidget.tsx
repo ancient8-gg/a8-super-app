@@ -5,8 +5,9 @@ import numbro from 'numbro'
 import { Flex, Typography, Button, Image } from 'antd'
 
 import CardWidget from './CardWidget'
+import LinkExternal from '@/components/systems/link-external'
 
-import { APP_ROUTES } from '@/constants'
+import locationConfig from '@/configs/location.config'
 
 import A8TokenRound from '@/assets/icon/token/a8-token-round.png'
 import BlockscoutService from '@/services/blockscout.service'
@@ -19,8 +20,9 @@ function StakingWidget() {
     queryKey: ['get-a8-balance'],
     initialData: '0',
     queryFn: async () => {
-      const { data } =
-        await BlockscoutService.getAddressTokenBalances(STAKING_ADDRESS)
+      const { data } = await BlockscoutService.getAddressTokenBalances(
+        STAKING_ADDRESS,
+      )
 
       const A8_TOKEN = data.find(
         (token) =>
@@ -61,7 +63,10 @@ function StakingWidget() {
         >
           <Flex vertical className="mobile:hidden">
             <Typography.Text className="text-[#F1F2F3] font-bold text-[42px]">
-              {`${numbro(a8Balance).format({ average: true, postfix: '+' })}`.toUpperCase()}
+              {`${numbro(a8Balance).format({
+                average: true,
+                postfix: '+',
+              })}`.toUpperCase()}
             </Typography.Text>
 
             <Typography.Text className="text-base text-white/50">
@@ -69,14 +74,14 @@ function StakingWidget() {
             </Typography.Text>
           </Flex>
 
-          <a href={APP_ROUTES.STAKING}>
+          <LinkExternal href={locationConfig.staking}>
             <Button
               type="primary"
               className="h-[52px] mobile:h-[36px] mobile:text-sm font-bold uppercase"
             >
               Stake Now
             </Button>
-          </a>
+          </LinkExternal>
         </Flex>
       </Flex>
     </CardWidget>
