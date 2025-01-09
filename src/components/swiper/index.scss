@@ -13,12 +13,11 @@
     z-index: 999;
     color: #f1f2f3 !important;
     border-radius: 1049.904px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    border: 1px solid #c4c6cd;
+    background: rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
 
     &:hover {
-      border-color: #c4c6cd !important;
       background: rgba(0, 0, 0, 0.12) !important;
     }
 
@@ -32,8 +31,8 @@
   }
 
   .swiper-button-disabled {
-    color: #252628 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #a3a5ae;
+    border: 1px solid rgba(196, 198, 205, 0.12);
   }
 
   .swiper-pagination {

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { useState } from 'react'
 
-import { Flex, Image, Typography, Space } from 'antd'
+import { Flex, Image, Typography, Space, Tooltip } from 'antd'
 
 import MarqueeComponent from '@/components/systems/marquee'
 import { MarqueeContext } from '@/components/systems/marquee/MarqueeContext'
@@ -33,13 +33,14 @@ function CardDApp({ data }: CardDAppProps) {
   const { title, description, thumbnail, tags, website } = data
 
   const [isHover, setIsHover] = useState(false)
+  const [isEllipsis, setIsEllipsis] = useState(false)
 
   return (
     <MarqueeContext.Provider value={{ isHover, setIsHover }}>
       <Link href={website || ''} target="_blank">
         <Flex
           vertical
-          className="card-dapp p-6"
+          className="card-dapp p-6 h-[316px] mobile:h-[290px]"
           gap={24}
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
@@ -63,9 +64,19 @@ function CardDApp({ data }: CardDAppProps) {
               <Typography.Text className="text-2xl mobile:text-base uppercase font-bold text-ellipsis">
                 {title}
               </Typography.Text>
-              <Typography.Text className="text-base mobile:text-[13px] text-[rgba(241,241,241,0.70)] text-ellipsis">
-                {description}
-              </Typography.Text>
+
+              <Tooltip title={isEllipsis ? description : undefined}>
+                <Typography.Paragraph
+                  ellipsis={{
+                    rows: 2,
+                    tooltip: false,
+                    onEllipsis: setIsEllipsis,
+                  }}
+                  className="text-base mobile:text-[13px] text-[rgba(241,241,241,0.70)] text-ellipsis"
+                >
+                  {description}
+                </Typography.Paragraph>
+              </Tooltip>
             </Flex>
 
             <MarqueeComponent>

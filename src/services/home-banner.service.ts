@@ -22,8 +22,8 @@ class BannerService {
     switch (sort) {
       case HomeBannerSort.PRIORITY:
       default:
-        // Note: larger priority number will be displayed first
-        sortValue.push('priority:desc')
+        // Note: Small priority number will be displayed first
+        sortValue.push('priority:asc')
         break
     }
 
