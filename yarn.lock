@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@ancient8/components@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@ancient8/components/-/components-2.0.0.tgz#490f90c9d36a7c0472ee2b502e3131bbb9eeb97c"
-  integrity sha512-qr/JiS4g2HYFgzxs1ggxjEJHtDFdebJFsh4uUgRdGFNJE+vpc54gA/sgH0wMQPJCxLZdxanMSgqS/ZTIle1vuA==
+"@ancient8/components@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ancient8/components/-/components-2.0.1.tgz#641ebfb6bc4a600a146d55b536ed393f1b473db8"
+  integrity sha512-w4q3pzy/F0l2D7K+lXaaKx3GDmknic3iUTEV766qhZW/Rf+8FS4PeGOmwBrWAeY6t+gyBWm5HZm7ncXlxNe4Yg==
   dependencies:
     "@rainbow-me/rainbowkit" "^2.2.0"
     "@tanstack/react-query" "^5.0.0"
@@ -6919,6 +6919,6 @@ zustand@5.0.0:
   integrity sha512-LE+VcmbartOPM+auOjCCLQOsQ05zUTp8RkgwRzefUk+2jISdMMFnxvyTjA4YNWr5ZGXYbVsEMZosttuxUBkojQ==
 
 zustand@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.2.tgz#f7595ada55a565f1fd6464f002a91e701ee0cfca"
-  integrity sha512-8qNdnJVJlHlrKXi50LDqqUNmUbuBjoKLrYQBnoChIbVph7vni+sY+YpvdjXG9YLd/Bxr6scMcR+rm5H3aSqPaw==
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.3.tgz#b323435b73d06b2512e93c77239634374b0e407f"
+  integrity sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==

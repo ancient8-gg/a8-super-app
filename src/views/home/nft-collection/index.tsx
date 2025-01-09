@@ -14,11 +14,14 @@ import { useCustomSwiper } from '@/hooks/custom-swiper/useCustomSwiper'
 import useIsMobile from '@/hooks/useIsMobile'
 
 import locationConfig from '@/configs/location.config'
+import { NftCollectionSort } from '@/types/nft-collection.type'
 
 import './index.scss'
 
 function NftCollection() {
-  const { data: nftCollections } = useNftCollections()
+  const { data: nftCollections } = useNftCollections({
+    sort: NftCollectionSort.PRIORITY,
+  })
   const isMobile = useIsMobile()
 
   const {

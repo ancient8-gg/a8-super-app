@@ -19,6 +19,9 @@ class NftCollectionService {
   }: GetListNftCollectionDto = {}) {
     const sortValue: string[] = []
     switch (sort) {
+      case NftCollectionSort.PRIORITY:
+        sortValue.push('priority:asc')
+        break
       case NftCollectionSort.NEW:
       default:
         sortValue.push('createdAt:desc')
