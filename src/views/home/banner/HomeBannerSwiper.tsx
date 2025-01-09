@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import { ArrowLeft } from 'iconsax-react'
 
+import LinkExternal from '@/components/systems/link-external'
+
 import type { HomeBanner } from '@/types'
 
 import 'swiper/css'
@@ -48,13 +50,15 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
         >
           {validItems.map((item, idx) => (
             <SwiperSlide key={idx} className="cursor-grab">
-              <Image
-                src={item.image}
-                alt="game-banner"
-                preview={false}
-                rootClassName="w-full"
-                className="aspect-[3/1] mobile:aspect-[5/3] object-cover rounded-md"
-              />
+              <LinkExternal href={item.actionUrl}>
+                <Image
+                  src={item.image}
+                  alt="game-banner"
+                  preview={false}
+                  rootClassName="w-full"
+                  className="aspect-[3/1] mobile:aspect-[5/3] object-cover rounded-md"
+                />
+              </LinkExternal>
             </SwiperSlide>
           ))}
           <Fragment>
@@ -94,7 +98,7 @@ function HomeBannerSwiper({ items, setActiveIdx }: HomeBannerSwiperProps) {
               alt="game-banner"
               preview={false}
               rootClassName="banner-nav-img w-[170px] mobile:w-[124px]"
-              className="aspect-[17/10] !h-[100px] mobile:!h-[73px]"
+              className="aspect-[17/10] !h-[100px] mobile:!h-[73px] object-cover"
             />
           </SwiperSlide>
         ))}

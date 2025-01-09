@@ -7,7 +7,7 @@ function EventWidget() {
   const { data } = useEventWidget()
 
   return (
-    <CardWidget classname="h-[262px] !py-6">
+    <CardWidget classname="!h-[262px] !py-6">
       <EventSwiper items={data} />
     </CardWidget>
   )
