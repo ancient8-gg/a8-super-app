@@ -26,7 +26,7 @@ function GamesSection() {
               { lg: 24, sm: 12, xs: 12 },
             ]}
             justify="start"
-            className="h-[434px] mobile:h-[auto]"
+            className="min-h-[434px] mobile:h-[auto]"
           >
             {games.map((game, index) => (
               <Col
