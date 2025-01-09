@@ -21,6 +21,7 @@ export type INftCollection = {
 
 export enum NftCollectionSort {
   NEW = 'NFT_COLLECTION_SORT:NEW',
+  PRIORITY = 'NFT_COLLECTION_SORT:PRIORITY',
 }
 
 export type GetListNftCollectionDto = GetListDto<NftCollectionSort>
