@@ -29,12 +29,27 @@ type CardNftProps = {
   collection: StrapiContent<INftCollection>
 }
 
+const numbroFormatOptions: numbro.Format = {
+  thousandSeparated: true,
+  mantissa: 0,
+  optionalMantissa: true,
+  trimMantissa: true,
+}
+
 const numbroFormatCurrencyOptions: numbro.Format = {
   thousandSeparated: true,
-  mantissa: 2,
+  mantissa: 0,
   optionalMantissa: true,
   trimMantissa: true,
   prefix: '~$',
+}
+
+const MAX_VALUE_TO_SHOW = 1_000_000
+
+const forceWholeNumber = (number: number) => {
+  const str = number.toString()
+
+  return str.split('.')[0]
 }
 
 function CardNft({ collection }: CardNftProps) {
@@ -57,6 +72,66 @@ function CardNft({ collection }: CardNftProps) {
     const decimals = best.listings[0].price.current.decimals
     return formatPrice(rawPrice, decimals)
   }, [best])
+
+  const { priceToShow, priceUsdToShow } = useMemo(() => {
+    if (!price && price !== 0)
+      return {
+        priceToShow: '--',
+        priceUsdToShow: '--',
+      }
+
+    const priceToShow = numbro(forceWholeNumber(price))
+      .format({
+        ...numbroFormatOptions,
+        average: price >= MAX_VALUE_TO_SHOW,
+      })
+      .toUpperCase()
+
+    const priceUsd = price * coinUsdRate
+
+    const priceUsdToShow = numbro(forceWholeNumber(priceUsd))
+      .format({
+        ...numbroFormatCurrencyOptions,
+        average: priceUsd >= MAX_VALUE_TO_SHOW,
+      })
+      .toUpperCase()
+
+    return {
+      priceToShow,
+      priceUsdToShow,
+    }
+  }, [coinUsdRate, price])
+
+  const { volumeToShow, volumeUsdToShow } = useMemo(() => {
+    if (!volumeData?.all?.volume && volumeData?.all?.volume !== 0)
+      return {
+        volumeToShow: '--',
+        volumeUsdToShow: '--',
+      }
+
+    const volume = volumeData.all.volume
+
+    const volumeToShow = numbro(forceWholeNumber(volume))
+      .format({
+        ...numbroFormatOptions,
+        average: volume >= MAX_VALUE_TO_SHOW,
+      })
+      .toUpperCase()
+
+    const priceUsd = volume * coinUsdRate
+
+    const volumeUsdToShow = numbro(forceWholeNumber(priceUsd))
+      .format({
+        ...numbroFormatCurrencyOptions,
+        average: priceUsd >= MAX_VALUE_TO_SHOW,
+      })
+      .toUpperCase()
+
+    return {
+      volumeToShow,
+      volumeUsdToShow,
+    }
+  }, [coinUsdRate, volumeData])
 
   return (
     <a href={`${locationConfig.nftMarketplace}/collections/${collection.slug}`}>
@@ -89,7 +164,7 @@ function CardNft({ collection }: CardNftProps) {
 
             <Flex align="center" gap={4}>
               <Typography.Text className="text-[13px]">
-                {price !== null ? price : '--'}
+                {priceToShow}
               </Typography.Text>
 
               <Image
@@ -100,11 +175,7 @@ function CardNft({ collection }: CardNftProps) {
               />
 
               <Typography.Text className="text-[13px] text-[#888E8F]">
-                {price !== null
-                  ? numbro((price ?? 0) * coinUsdRate).format(
-                      numbroFormatCurrencyOptions,
-                    )
-                  : '--'}
+                {priceUsdToShow}
               </Typography.Text>
             </Flex>
           </Flex>
@@ -116,7 +187,7 @@ function CardNft({ collection }: CardNftProps) {
 
             <Flex align="center" gap={4}>
               <Typography.Text className="text-[13px]">
-                {volumeData?.['all']?.volume ?? '--'}
+                {volumeToShow}
               </Typography.Text>
 
               <Image
@@ -127,11 +198,7 @@ function CardNft({ collection }: CardNftProps) {
               />
 
               <Typography.Text className="text-[13px] text-[#888E8F]">
-                {volumeData?.['all']?.volume !== null
-                  ? numbro(
-                      (volumeData?.['all']?.volume ?? 0) * coinUsdRate,
-                    ).format(numbroFormatCurrencyOptions)
-                  : '--'}
+                {volumeUsdToShow}
               </Typography.Text>
             </Flex>
           </Flex>
@@ -145,7 +212,7 @@ function MarketplaceWidget() {
   const { data: nftCollections } = useNftCollections()
 
   return (
-    <CardWidget classname="h-[380px] mobile:h-[340px]">
+    <CardWidget classname="!h-[380px] mobile:!h-[340px]">
       <Flex vertical justify="space-between" className="h-full">
         <Flex justify="space-between" align="center">
           <Typography.Text className="title-gradient text-[22px]/[40px] mobile:text-[18px]/[22px] font-bold">

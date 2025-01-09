@@ -12,7 +12,7 @@ function GameProtocolWidget() {
 
   if (isMobile)
     return (
-      <CardWidget classname="h-[262px] mobile:h-[171px]">
+      <CardWidget classname="!h-[262px] mobile:!h-[171px]">
         <Flex vertical gap={10} className="h-full overflow-hidden">
           <Typography.Text className="title-gradient text-lg leading-[1] font-bold text-center">
             Games
@@ -31,7 +31,7 @@ function GameProtocolWidget() {
     )
 
   return (
-    <CardWidget classname="h-[262px] !p-0 overflow-hidden">
+    <CardWidget classname="!h-[262px] !p-0 overflow-hidden">
       <Flex align="center" justify="space-between" className="h-full px-6">
         <Flex vertical gap={12}>
           <Typography.Text className="title-gradient text-[22px]/[22px] font-bold">

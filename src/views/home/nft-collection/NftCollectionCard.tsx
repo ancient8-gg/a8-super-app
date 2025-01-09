@@ -79,21 +79,23 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                   >
                     FLOOR PRICE
                   </Typography.Text>
-                  <Flex
-                    gap={4}
-                    className="mt-2 mb-1 font-bold text-md"
-                    align="center"
-                  >
-                    <Typography.Text>
-                      {price !== null ? price : '--'}
+                  <Flex vertical gap={6}>
+                    <Flex
+                      gap={4}
+                      className="mt-2 mb-1 font-bold text-md"
+                      align="center"
+                    >
+                      <Typography.Text>
+                        {price !== null ? price : '--'}
+                      </Typography.Text>
+                      <A8TokenIcon size={16} />
+                    </Flex>
+                    <Typography.Text className="text-[#888E8F] text-[12px]">
+                      {price !== null && coinUsdRate
+                        ? formatCurrency(price * coinUsdRate, true, 'before')
+                        : '--'}
                     </Typography.Text>
-                    <A8TokenIcon size={16} />
                   </Flex>
-                  <Typography.Text className="text-[#888E8F] text-[12px]">
-                    {price !== null && coinUsdRate
-                      ? formatCurrency(price * coinUsdRate, true, 'before')
-                      : '--'}
-                  </Typography.Text>
                 </Flex>
               </Col>
               <Col span={12}>
@@ -104,23 +106,25 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                   >
                     TOTAL VOLUME
                   </Typography.Text>
-                  <Flex
-                    gap={4}
-                    className="mt-2 mb-1 font-bold text-md mobile:text-sm leading-[1.4]"
-                    align="center"
-                  >
-                    <Typography.Text>
-                      {volumeData?.['all']?.volume || '--'}
+                  <Flex vertical gap={6}>
+                    <Flex
+                      gap={4}
+                      className="mt-2 mb-1 font-bold text-md mobile:text-sm leading-[1.4]"
+                      align="center"
+                    >
+                      <Typography.Text>
+                        {volumeData?.['all']?.volume || '--'}
+                      </Typography.Text>
+                      <A8TokenIcon size={16} />
+                    </Flex>
+                    <Typography.Text className="text-[#888E8F] text-[12px]">
+                      {formatCurrency(
+                        (volumeData?.['all'].volume || 0) * coinUsdRate,
+                        true,
+                        'before',
+                      )}
                     </Typography.Text>
-                    <A8TokenIcon size={16} />
                   </Flex>
-                  <Typography.Text className="text-[#888E8F] text-[12px]">
-                    {formatCurrency(
-                      (volumeData?.['all'].volume || 0) * coinUsdRate,
-                      true,
-                      'before',
-                    )}
-                  </Typography.Text>
                 </Flex>
               </Col>
             </Row>
