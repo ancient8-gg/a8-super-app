@@ -30,7 +30,7 @@ function SwapWidget() {
 
   if (isMobile)
     return (
-      <CardWidget classname="h-full mobile:h-[171px]">
+      <CardWidget classname="!h-full mobile:!h-[171px]">
         <Flex
           vertical
           align="center"
@@ -94,7 +94,7 @@ function SwapWidget() {
 
   return (
     <a href={APP_ROUTES.SWAP}>
-      <CardWidget classname="h-full min-h-[262px]">
+      <CardWidget classname="!h-full !min-h-[262px]">
         <Flex vertical justify="space-between" className="h-full">
           <Flex justify="space-between" align="center">
             <Flex vertical gap={6}>

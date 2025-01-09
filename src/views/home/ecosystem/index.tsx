@@ -16,7 +16,7 @@ function DAppEcosystem() {
   return (
     <Flex vertical className="w-full gap-[60px] mobile:gap-6">
       <Flex justify="space-between" align="center">
-        <SectionTitle title="Dapps Ecosystem" />
+        <SectionTitle title="Dapps" />
 
         <Button
           href="https://ancient8.gg/ecosystem/"
