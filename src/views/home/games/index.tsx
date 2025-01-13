@@ -17,7 +17,7 @@ function GamesSection() {
     <Flex vertical className="games-section gap-24 mobile:gap-12">
       <Row gutter={[0, { lg: 60, sm: 24, xs: 24 }]} className="w-full">
         <Col span={24}>
-          <SectionTitle title="Ancient8 Gaming" />
+          <SectionTitle title="Game on Ancient8" />
         </Col>
         <Col span={24}>
           <Row
@@ -26,6 +26,7 @@ function GamesSection() {
               { lg: 24, sm: 12, xs: 12 },
             ]}
             justify="start"
+            className="min-h-[434px] mobile:h-[auto]"
           >
             {games.map((game, index) => (
               <Col

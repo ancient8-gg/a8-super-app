@@ -1,0 +1,60 @@
+.card-border-gradient {
+  --border-width: 1px;
+
+  position: relative;
+  padding: var(--border-width);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  .gradient-outer {
+    position: absolute;
+    width: 200%;
+    aspect-ratio: 1/1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+
+    .gradient-inner {
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  &:hover {
+    .gradient-inner {
+      background: linear-gradient(
+        135deg,
+        #d8ff76 0%,
+        #d8ff76 25%,
+        #2a3a00 38%,
+        #3b4b13 59%,
+        #425610 96%,
+        #425610 100%
+      );
+      animation-name: spin;
+      animation-duration: 4000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  &-content {
+    border-radius: inherit;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
