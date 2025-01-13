@@ -1,16 +1,12 @@
 import Link from 'next/link'
-import { useMemo } from 'react'
 
 import { Col, Flex, Image, Row, Typography } from 'antd'
 
 import { A8TokenIcon, VerifiedIcon } from '@/components/icons'
 
-import { useBestByCollection } from '@/hooks/listing/useBestListingByToken'
-import { useGetCoinUsdPrice } from '@/hooks/currency-pricing/useTokenUsdPrice'
-import { useCollectionVolume } from '@/hooks/statistic/useCollectionVolume'
+import { useNftMetrics } from '@/hooks/nft-collection/useNftMetrics'
 
 import locationConfig from '@/configs/location.config'
-import { formatCurrency, formatPrice } from '@/utils/currency.util'
 import { TokenSymbol } from '@/constants'
 
 import { INftCollection } from '@/types/nft-collection.type'
@@ -20,25 +16,8 @@ type NftCollectionCardProps = {
 }
 
 function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
-  const { data } = useBestByCollection({
-    slug: nftDetails.slug,
-  })
-
-  const { data: volumeData } = useCollectionVolume({
-    address: nftDetails.address,
-  })
-
-  const { data: coinUsdRate } = useGetCoinUsdPrice(
-    volumeData?.['all']?.currency as TokenSymbol,
-  )
-
-  const price = useMemo(() => {
-    if (!data?.listings || data.listings.length === 0) return null
-
-    const rawPrice = data.listings[0].price.current.value
-    const decimals = data.listings[0].price.current.decimals
-    return formatPrice(rawPrice, decimals)
-  }, [data])
+  const { priceToShow, priceUsdToShow, volumeToShow, volumeUsdToShow } =
+    useNftMetrics(nftDetails.slug, nftDetails.address, TokenSymbol.A8)
 
   return (
     <Link
@@ -85,15 +64,11 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                       className="mt-2 mb-1 font-bold text-md"
                       align="center"
                     >
-                      <Typography.Text>
-                        {price !== null ? price : '--'}
-                      </Typography.Text>
+                      <Typography.Text>{priceToShow}</Typography.Text>
                       <A8TokenIcon size={16} />
                     </Flex>
                     <Typography.Text className="text-[#888E8F] text-[12px]">
-                      {price !== null && coinUsdRate
-                        ? formatCurrency(price * coinUsdRate, true, 'before')
-                        : '--'}
+                      {priceUsdToShow}
                     </Typography.Text>
                   </Flex>
                 </Flex>
@@ -112,17 +87,11 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                       className="mt-2 mb-1 font-bold text-md mobile:text-sm leading-[1.4]"
                       align="center"
                     >
-                      <Typography.Text>
-                        {volumeData?.['all']?.volume || '--'}
-                      </Typography.Text>
+                      <Typography.Text>{volumeToShow}</Typography.Text>
                       <A8TokenIcon size={16} />
                     </Flex>
                     <Typography.Text className="text-[#888E8F] text-[12px]">
-                      {formatCurrency(
-                        (volumeData?.['all'].volume || 0) * coinUsdRate,
-                        true,
-                        'before',
-                      )}
+                      {volumeUsdToShow}
                     </Typography.Text>
                   </Flex>
                 </Flex>
