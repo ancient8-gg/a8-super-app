@@ -21,7 +21,10 @@ import A8Token from '@/assets/icon/token/token-a8.png'
 import NftThumbnail from '@/assets/img/widget/nft-thumbnail.jpeg'
 
 import type { StrapiContent } from '@/types'
-import type { INftCollection } from '@/types/nft-collection.type'
+import {
+  type INftCollection,
+  NftCollectionSort,
+} from '@/types/nft-collection.type'
 
 import './marketplace-widget.scss'
 
@@ -209,7 +212,9 @@ function CardNft({ collection }: CardNftProps) {
 }
 
 function MarketplaceWidget() {
-  const { data: nftCollections } = useNftCollections()
+  const { data: nftCollections } = useNftCollections({
+    sort: NftCollectionSort.PRIORITY,
+  })
 
   return (
     <CardWidget classname="!h-[380px] mobile:!h-[340px]">
