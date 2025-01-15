@@ -78,9 +78,6 @@
       }
     }
 
-    .game-title {
-    }
-
     .game-category {
       &__item {
         border: 0.6px solid rgba(255, 255, 255, 0.08);
@@ -88,6 +85,10 @@
         background: rgba(29, 29, 29, 0.5);
         backdrop-filter: blur(25px);
         box-sizing: border-box;
+
+        &:first-child {
+          margin-left: 8px;
+        }
       }
     }
   }
