@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import { Flex, Typography, Button } from 'antd'
 import { Menu as MenuIcon, ArrowRight } from 'iconsax-react'
@@ -9,19 +9,14 @@ import HomeBannerSwiper from './HomeBannerSwiper'
 
 import { useHomeBanners } from '@/hooks/home-banner/useHomeBanners'
 
-import { HomeBanner } from '@/types'
-
 import './index.scss'
 
 const BannerSection = () => {
   const [activeIdx, setActiveIdx] = useState(0)
-  const [gameActive, setGameActive] = useState<HomeBanner | null>()
 
   const { data } = useHomeBanners()
 
-  useEffect(() => {
-    setGameActive(data?.[activeIdx])
-  }, [activeIdx, data])
+  const gameActive = data?.[activeIdx]
 
   return (
     <Flex vertical className="banner-section" gap={20}>
