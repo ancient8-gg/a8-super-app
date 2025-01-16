@@ -16,7 +16,7 @@
     "wagmi": "^2.12.30"
   },
   "dependencies": {
-    "@ancient8/components": "^2.0.2",
+    "@ancient8/components": "^2.1.1",
     "@ant-design/cssinjs": "^1.21.1",
     "@ant-design/static-style-extract": "^1.0.3",
     "@rainbow-me/rainbowkit": "^2.2.0",
