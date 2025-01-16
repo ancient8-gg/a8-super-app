@@ -1,6 +1,7 @@
 import { GetListDto } from './common.type'
 
 export type HomeBanner = {
+  id: number
   title: string
   description: string
   image: string
