@@ -13,17 +13,18 @@ import {
 import * as allWallets from '@rainbow-me/rainbowkit/wallets'
 
 import A8Logo from '@/assets/img/logo/a8-logo-chain.png'
+import EthLogo from '@/assets/img/logo/eth-logo-chain.png'
 
 const supportedChains =
   process.env.NEXT_PUBLIC_ENV === 'production'
-    ? ([mainnet, { ...ancient8, iconUrl: A8Logo.src }] as [
-        RainbowKitChain,
-        ...RainbowKitChain[],
-      ])
-    : ([sepolia, { ...ancient8Sepolia, iconUrl: A8Logo.src }] as [
-        RainbowKitChain,
-        ...RainbowKitChain[],
-      ])
+    ? ([
+        { ...ancient8, iconUrl: A8Logo.src },
+        { ...mainnet, iconUrl: EthLogo.src },
+      ] as [RainbowKitChain, ...RainbowKitChain[]])
+    : ([
+        { ...ancient8Sepolia, iconUrl: A8Logo.src },
+        { ...sepolia, iconUrl: EthLogo.src },
+      ] as [RainbowKitChain, ...RainbowKitChain[]])
 
 export const wagmiConfig = getDefaultConfig({
   appName: 'a8-super-app',
