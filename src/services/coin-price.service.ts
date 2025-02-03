@@ -1,8 +1,6 @@
 import axios from 'axios'
 
-import { proxyConfig } from '@/configs'
-
-const coingeckoProxy = `${proxyConfig.coingeckoProxy}/coingecko/simple/price`
+import { apiConfig } from '@/configs'
 
 interface CoinPriceResponseType {
   [key: string]: {
@@ -13,7 +11,7 @@ interface CoinPriceResponseType {
 class CoinPriceService {
   async fetchUsdPrice(coingeckoId: string): Promise<CoinPriceResponseType> {
     try {
-      const { data } = await axios.get(coingeckoProxy, {
+      const { data } = await axios.get(`${apiConfig.utilsApi}/price`, {
         params: {
           ids: coingeckoId,
           vs_currencies: 'usd',

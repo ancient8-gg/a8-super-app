@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@ancient8/components@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@ancient8/components/-/components-2.1.1.tgz#1950ed33fd6af2a6b10c13fce246c9428cc78c81"
-  integrity sha512-r8Q7LJ4GhjIoC3/WgtPkO4gYheCuuAk00l93KwjdxNcNZHZ3AkKPTf8QagEwFeskPAnN2G78etj/iHeD0O+bSw==
+"@ancient8/components@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@ancient8/components/-/components-2.2.0.tgz#dbf8f6aaf81097841d7a5f577bbcbd2379ef7df5"
+  integrity sha512-ICooK8rKpaaDMQmCWBA2TQYBEuMHOyGkaX0mOtjodzAydjINF7xmjUn9soTHCzuJ1y1Fui/ouLVi8GYXH2QF7w==
   dependencies:
     "@rainbow-me/rainbowkit" "^2.2.0"
     "@tanstack/react-query" "^5.0.0"
