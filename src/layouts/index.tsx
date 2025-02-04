@@ -3,7 +3,7 @@ import { Layout } from '@ancient8/components'
 
 import ThemeProvider from '@/providers/ThemeProvider'
 
-import { apiConfig, proxyConfig } from '@/configs'
+import { apiConfig } from '@/configs'
 
 function MainLayout({ children }: PropsWithChildren) {
   return (
@@ -14,7 +14,7 @@ function MainLayout({ children }: PropsWithChildren) {
         },
         header: {
           baseUrl: `${apiConfig.strapiApi}/user-nav-menus`,
-          startsA8Proxy: proxyConfig.coingeckoProxy,
+          utilsApi: apiConfig.utilsApi,
         },
       }}
     >
