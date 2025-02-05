@@ -11,6 +11,8 @@ import { TokenSymbol } from '@/constants'
 
 import { INftCollection } from '@/types/nft-collection.type'
 
+import './index.scss'
+
 type NftCollectionCardProps = {
   nftDetails: INftCollection
 }
@@ -59,12 +61,10 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                     FLOOR PRICE
                   </Typography.Text>
                   <Flex vertical gap={6}>
-                    <Flex
-                      gap={4}
-                      className="mt-2 mb-1 font-bold text-md"
-                      align="center"
-                    >
-                      <Typography.Text>{priceToShow}</Typography.Text>
+                    <Flex gap={4} className="mt-2 mb-1" align="center">
+                      <Typography.Text className="font-bold text-base mobile:text-sm leading-[1.4]">
+                        {priceToShow}
+                      </Typography.Text>
                       <A8TokenIcon size={16} />
                     </Flex>
                     <Typography.Text className="text-[#888E8F] text-[12px]">
@@ -82,12 +82,10 @@ function NftCollectionCard({ nftDetails }: NftCollectionCardProps) {
                     TOTAL VOLUME
                   </Typography.Text>
                   <Flex vertical gap={6}>
-                    <Flex
-                      gap={4}
-                      className="mt-2 mb-1 font-bold text-md mobile:text-sm leading-[1.4]"
-                      align="center"
-                    >
-                      <Typography.Text>{volumeToShow}</Typography.Text>
+                    <Flex gap={4} className="mt-2 mb-1" align="center">
+                      <Typography.Text className="font-bold text-md mobile:text-sm leading-[1.4]">
+                        {volumeToShow}
+                      </Typography.Text>
                       <A8TokenIcon size={16} />
                     </Flex>
                     <Typography.Text className="text-[#888E8F] text-[12px]">
